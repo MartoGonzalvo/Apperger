@@ -1,0 +1,9 @@
+C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\bin\Negocio.dll.config
+C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\bin\Negocio.dll
+C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\bin\Negocio.pdb
+C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\obj\Debug\Negocio.dll
+C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\obj\Debug\Negocio.pdb

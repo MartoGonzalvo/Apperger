@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="appergerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="nIdCategoria" />
+    </Key>
+    <Property Name="nIdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sDescripcion" Type="varchar" MaxLength="50" />
+    <Property Name="nIdTratamiento" Type="int" />
+  </EntityType>
+  <EntityType Name="Emocion">
+    <Key>
+      <PropertyRef Name="nIdEmocion" />
+    </Key>
+    <Property Name="nIdEmocion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sDescripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Imagen">
+    <Key>
+      <PropertyRef Name="nIdImagen" />
+    </Key>
+    <Property Name="nIdImagen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sImagen" Type="varchar" MaxLength="100" />
+    <Property Name="nIdTratamiento" Type="int" />
+    <Property Name="nIdCategoria" Type="int" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="nIdRol" />
+    </Key>
+    <Property Name="nIdRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sDescripcion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Selfie">
+    <Key>
+      <PropertyRef Name="nIdSelfie" />
+    </Key>
+    <Property Name="nIdSelfie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nIdTratamiento" Type="int" />
+    <Property Name="nIdEmocionElegida" Type="int" />
+    <Property Name="nIdEmocionRealizada" Type="int" />
+  </EntityType>
+  <EntityType Name="Tratamiento">
+    <Key>
+      <PropertyRef Name="nIdTratamiento" />
+    </Key>
+    <Property Name="nIdTratamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dFechaInicio" Type="date" />
+    <Property Name="dFechaFin" Type="date" />
+    <Property Name="bSelfie" Type="bit" />
+    <Property Name="bImagen" Type="bit" />
+    <Property Name="bVideo" Type="bit" />
+    <Property Name="nIdPsicologo" Type="int" />
+    <Property Name="nIdPaciente" Type="int" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="nIdUsuario" />
+    </Key>
+    <Property Name="nIdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nRol" Type="int" />
+    <Property Name="sUsuario" Type="varchar" MaxLength="30" />
+    <Property Name="sApellido" Type="varchar" MaxLength="30" />
+    <Property Name="nEdad" Type="smallint" />
+    <Property Name="sMatricula" Type="smallint" />
+    <Property Name="dFechaNacimiento" Type="date" />
+    <Property Name="sPais" Type="varchar" MaxLength="30" />
+    <Property Name="sProvincia" Type="varchar" MaxLength="30" />
+    <Property Name="sCiudad" Type="varchar" MaxLength="30" />
+    <Property Name="nPacienteDe" Type="int" />
+  </EntityType>
+  <EntityType Name="Video">
+    <Key>
+      <PropertyRef Name="nIdVideo" />
+    </Key>
+    <Property Name="nIdVideo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sVideo" Type="varchar" MaxLength="100" />
+    <Property Name="nIdTratamiento" Type="int" />
+    <Property Name="nIdCategoria" Type="int" />
+  </EntityType>
+  <Association Name="FK__Categoria__nIdTr__5CD6CB2B">
+    <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="0..1" />
+    <End Role="Categoria" Type="Self.Categoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tratamiento">
+        <PropertyRef Name="nIdTratamiento" />
+      </Principal>
+      <Dependent Role="Categoria">
+        <PropertyRef Name="nIdTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Imagen__nIdCateg__6B24EA82">
+    <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
+    <End Role="Imagen" Type="Self.Imagen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="nIdCategoria" />
+      </Principal>
+      <Dependent Role="Imagen">
+        <PropertyRef Name="nIdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Imagen__nIdTrata__6A30C649">
+    <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="0..1" />
+    <End Role="Imagen" Type="Self.Imagen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tratamiento">
+        <PropertyRef Name="nIdTratamiento" />
+      </Principal>
+      <Dependent Role="Imagen">
+        <PropertyRef Name="nIdTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Selfie__nIdEmoci__66603565">
+    <End Role="Emocion" Type="Self.Emocion" Multiplicity="0..1" />
+    <End Role="Selfie" Type="Self.Selfie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emocion">
+        <PropertyRef Name="nIdEmocion" />
+      </Principal>
+      <Dependent Role="Selfie">
+        <PropertyRef Name="nIdEmocionElegida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Selfie__nIdEmoci__6754599E">
+    <End Role="Emocion" Type="Self.Emocion" Multiplicity="0..1" />
+    <End Role="Selfie" Type="Self.Selfie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emocion">
+        <PropertyRef Name="nIdEmocion" />
+      </Principal>
+      <Dependent Role="Selfie">
+        <PropertyRef Name="nIdEmocionRealizada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Selfie__nIdTrata__656C112C">
+    <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="0..1" />
+    <End Role="Selfie" Type="Self.Selfie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tratamiento">
+        <PropertyRef Name="nIdTratamiento" />
+      </Principal>
+      <Dependent Role="Selfie">
+        <PropertyRef Name="nIdTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tratamien__nIdPa__59FA5E80">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="nIdUsuario" />
+      </Principal>
+      <Dependent Role="Tratamiento">
+        <PropertyRef Name="nIdPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tratamien__nIdPs__59063A47">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="nIdUsuario" />
+      </Principal>
+      <Dependent Role="Tratamiento">
+        <PropertyRef Name="nIdPsicologo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__usuario__nRol__5629CD9C">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="nIdRol" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="nRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Video__nIdCatego__628FA481">
+    <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
+    <End Role="Video" Type="Self.Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="nIdCategoria" />
+      </Principal>
+      <Dependent Role="Video">
+        <PropertyRef Name="nIdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Video__nIdTratam__619B8048">
+    <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="0..1" />
+    <End Role="Video" Type="Self.Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tratamiento">
+        <PropertyRef Name="nIdTratamiento" />
+      </Principal>
+      <Dependent Role="Video">
+        <PropertyRef Name="nIdTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="appergerModelStoreContainer">
+    <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emocion" EntityType="Self.Emocion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Imagen" EntityType="Self.Imagen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Selfie" EntityType="Self.Selfie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tratamiento" EntityType="Self.Tratamiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Video" EntityType="Self.Video" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Categoria__nIdTr__5CD6CB2B" Association="Self.FK__Categoria__nIdTr__5CD6CB2B">
+      <End Role="Tratamiento" EntitySet="Tratamiento" />
+      <End Role="Categoria" EntitySet="Categoria" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Imagen__nIdCateg__6B24EA82" Association="Self.FK__Imagen__nIdCateg__6B24EA82">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Imagen" EntitySet="Imagen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Imagen__nIdTrata__6A30C649" Association="Self.FK__Imagen__nIdTrata__6A30C649">
+      <End Role="Tratamiento" EntitySet="Tratamiento" />
+      <End Role="Imagen" EntitySet="Imagen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Selfie__nIdEmoci__66603565" Association="Self.FK__Selfie__nIdEmoci__66603565">
+      <End Role="Emocion" EntitySet="Emocion" />
+      <End Role="Selfie" EntitySet="Selfie" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Selfie__nIdEmoci__6754599E" Association="Self.FK__Selfie__nIdEmoci__6754599E">
+      <End Role="Emocion" EntitySet="Emocion" />
+      <End Role="Selfie" EntitySet="Selfie" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Selfie__nIdTrata__656C112C" Association="Self.FK__Selfie__nIdTrata__656C112C">
+      <End Role="Tratamiento" EntitySet="Tratamiento" />
+      <End Role="Selfie" EntitySet="Selfie" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tratamien__nIdPa__59FA5E80" Association="Self.FK__Tratamien__nIdPa__59FA5E80">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="Tratamiento" EntitySet="Tratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tratamien__nIdPs__59063A47" Association="Self.FK__Tratamien__nIdPs__59063A47">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="Tratamiento" EntitySet="Tratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__usuario__nRol__5629CD9C" Association="Self.FK__usuario__nRol__5629CD9C">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Video__nIdCatego__628FA481" Association="Self.FK__Video__nIdCatego__628FA481">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Video" EntitySet="Video" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Video__nIdTratam__619B8048" Association="Self.FK__Video__nIdTratam__619B8048">
+      <End Role="Tratamiento" EntitySet="Tratamiento" />
+      <End Role="Video" EntitySet="Video" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
