@@ -7,3 +7,14 @@ C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\obj\Debug\Negocio.csprojResolveA
 C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
 C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\obj\Debug\Negocio.dll
 C:\Users\HIGGE\source\repos\AppergerWeb\Negocio\obj\Debug\Negocio.pdb
+C:\Users\HIGGE\source\repos\AppergerWeb4\Negocio\bin\Negocio.dll.config
+C:\Users\HIGGE\source\repos\AppergerWeb4\Negocio\bin\Negocio.dll
+C:\Users\HIGGE\source\repos\AppergerWeb4\Negocio\bin\Negocio.pdb
+C:\Users\HIGGE\source\repos\AppergerWeb4\Negocio\bin\EntityFramework.dll
+C:\Users\HIGGE\source\repos\AppergerWeb4\Negocio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\HIGGE\source\repos\AppergerWeb4\Negocio\bin\EntityFramework.xml
+C:\Users\HIGGE\source\repos\AppergerWeb4\Negocio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\HIGGE\source\repos\AppergerWeb4\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\HIGGE\source\repos\AppergerWeb4\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\HIGGE\source\repos\AppergerWeb4\Negocio\obj\Debug\Negocio.dll
+C:\Users\HIGGE\source\repos\AppergerWeb4\Negocio\obj\Debug\Negocio.pdb

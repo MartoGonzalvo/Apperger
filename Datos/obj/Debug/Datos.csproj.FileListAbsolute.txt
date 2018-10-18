@@ -7,3 +7,14 @@ C:\Users\HIGGE\source\repos\AppergerWeb\Datos\obj\Debug\Datos.csprojResolveAssem
 C:\Users\HIGGE\source\repos\AppergerWeb\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 C:\Users\HIGGE\source\repos\AppergerWeb\Datos\obj\Debug\Datos.dll
 C:\Users\HIGGE\source\repos\AppergerWeb\Datos\obj\Debug\Datos.pdb
+C:\Users\HIGGE\source\repos\AppergerWeb4\Datos\bin\Datos.dll.config
+C:\Users\HIGGE\source\repos\AppergerWeb4\Datos\bin\Datos.dll
+C:\Users\HIGGE\source\repos\AppergerWeb4\Datos\bin\Datos.pdb
+C:\Users\HIGGE\source\repos\AppergerWeb4\Datos\bin\EntityFramework.dll
+C:\Users\HIGGE\source\repos\AppergerWeb4\Datos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\HIGGE\source\repos\AppergerWeb4\Datos\bin\EntityFramework.xml
+C:\Users\HIGGE\source\repos\AppergerWeb4\Datos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\HIGGE\source\repos\AppergerWeb4\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\HIGGE\source\repos\AppergerWeb4\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\HIGGE\source\repos\AppergerWeb4\Datos\obj\Debug\Datos.dll
+C:\Users\HIGGE\source\repos\AppergerWeb4\Datos\obj\Debug\Datos.pdb

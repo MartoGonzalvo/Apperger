@@ -19,7 +19,38 @@ namespace AppergerWeb.Controllers
             return View();
         }
 
-        //Apperger db = new appergerEntities();
+        appergerEntities DB = new appergerEntities();
+
+        public ActionResult CrearEditarUsuario()
+        {
+            try
+            {
+                var usuario1 = new usuario
+                {
+                    sApellido = "Perez",
+                    nRol = 1,
+                    nEdad = 12,
+                    sProvincia = "buenos aires",
+                    sPais = "Argentina",
+                    dFechaNacimiento = DateTime.Now,
+                    nIdUsuario = 1,
+                    nPacienteDe = 1,
+                    sUsuario = "Sol perez"
+
+                };
+
+                DB.usuario.Add(usuario1);
+                //  DB.Rol.Add(rol2);
+                DB.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            ;
+            return View();
+        }
+
 
     }
 }
