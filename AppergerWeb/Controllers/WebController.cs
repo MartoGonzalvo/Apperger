@@ -18,7 +18,7 @@ namespace AppergerWeb.Controllers
         {
             return View();
         }
-        Apperger db = new appergerEntities();
+        //Apperger db = new appergerEntities();
 
     }
 }
