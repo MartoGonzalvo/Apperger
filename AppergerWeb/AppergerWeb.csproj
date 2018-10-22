@@ -801,6 +801,7 @@
     <Content Include="scss\widgets.scss" />
     <Content Include="Views\Web\Pacientes.cshtml" />
     <Content Include="Views\CrearEditarUsuario.cshtml" />
+    <Content Include="Views\Web\CrearEditarUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiApperger\ApiApperger.csproj">

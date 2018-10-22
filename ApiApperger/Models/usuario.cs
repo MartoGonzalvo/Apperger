@@ -11,7 +11,8 @@ namespace ApiApperger.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class usuario
     {
         public usuario()
@@ -22,6 +23,7 @@ namespace ApiApperger.Models
     
         public int nIdUsuario { get; set; }
         public Nullable<int> nRol { get; set; }
+        [DisplayName("Nombre")]
         public string sUsuario { get; set; }
         public string sApellido { get; set; }
         public Nullable<short> nEdad { get; set; }

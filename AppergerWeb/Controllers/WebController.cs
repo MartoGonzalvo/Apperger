@@ -5,13 +5,23 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
+
+
 namespace AppergerWeb.Controllers
 {
     public class WebController : Controller
     {
+        appergerEntities DB = new appergerEntities(); //conexion a la db de la api
+
         // GET: Web
         public ActionResult Index()
         {
+            //logica 
+            //var logicusuario = new 
+            //usuario usuario = new usuario();
+            //DB.usuario.Where(x => x.nPacienteDe).tolist();
+
             return View();
         }
         public ActionResult Pacientes()
@@ -19,38 +29,30 @@ namespace AppergerWeb.Controllers
             return View();
         }
 
-        appergerEntities DB = new appergerEntities();
+        
 
-        public ActionResult CrearEditarUsuario()
+        
+        public ActionResult CrearEditarUsuario(usuario modelo)
         {
+            return View();
+
+        }
+
+        
+        public ActionResult CrearEditarUsuario1(usuario modelo)
+        {           
             try
             {
-                var usuario1 = new usuario
-                {
-                    sApellido = "Perez",
-                    nRol = 1,
-                    nEdad = 12,
-                    sProvincia = "buenos aires",
-                    sPais = "Argentina",
-                    dFechaNacimiento = DateTime.Now,
-                    nIdUsuario = 1,
-                    nPacienteDe = 1,
-                    sUsuario = "Sol perez"
-
-                };
-
-                DB.usuario.Add(usuario1);
-                //  DB.Rol.Add(rol2);
+                DB.usuario.Add(modelo);
                 DB.SaveChanges();
+
             }
             catch (Exception ex)
             {
                 throw ex;
             }
             ;
-            return View();
+            return View("Pacientes");
         }
-
-
-    }
+                    }
 }

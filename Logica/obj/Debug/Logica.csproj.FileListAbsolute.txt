@@ -1,0 +1,9 @@
+C:\Users\HIGGE\Source\Repos\AppergerWeb4\Logica\bin\Logica.dll.config
+C:\Users\HIGGE\Source\Repos\AppergerWeb4\Logica\bin\Logica.dll
+C:\Users\HIGGE\Source\Repos\AppergerWeb4\Logica\bin\Logica.pdb
+C:\Users\HIGGE\Source\Repos\AppergerWeb4\Logica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\HIGGE\Source\Repos\AppergerWeb4\Logica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\HIGGE\Source\Repos\AppergerWeb4\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\HIGGE\Source\Repos\AppergerWeb4\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\HIGGE\Source\Repos\AppergerWeb4\Logica\obj\Debug\Logica.dll
+C:\Users\HIGGE\Source\Repos\AppergerWeb4\Logica\obj\Debug\Logica.pdb
