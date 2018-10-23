@@ -29,9 +29,12 @@ namespace AppergerWeb.Controllers
             return View();
         }
 
-        
 
-        
+        public ActionResult Login()
+        {
+            return View();
+        }
+
         public ActionResult CrearEditarUsuario(usuario modelo)
         {
             return View();

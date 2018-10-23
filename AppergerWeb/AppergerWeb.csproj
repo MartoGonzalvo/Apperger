@@ -244,6 +244,7 @@
     <Content Include="Content\colors\blue.css" />
     <Content Include="Content\spinners.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\style1.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -802,6 +803,7 @@
     <Content Include="Views\Web\Pacientes.cshtml" />
     <Content Include="Views\CrearEditarUsuario.cshtml" />
     <Content Include="Views\Web\CrearEditarUsuario.cshtml" />
+    <Content Include="Views\Web\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiApperger\ApiApperger.csproj">

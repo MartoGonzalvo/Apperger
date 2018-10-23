@@ -18,16 +18,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Imagen">
-      <EntityTypeMapping TypeName="appergerModel.Imagen">
-        <MappingFragment StoreEntitySet="Imagen">
-          <ScalarProperty Name="nIdImagen" ColumnName="nIdImagen" />
-          <ScalarProperty Name="sImagen" ColumnName="sImagen" />
-          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
-          <ScalarProperty Name="nIdCategoria" ColumnName="nIdCategoria" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Rol">
       <EntityTypeMapping TypeName="appergerModel.Rol">
         <MappingFragment StoreEntitySet="Rol">
@@ -60,30 +50,62 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="usuario">
-      <EntityTypeMapping TypeName="appergerModel.usuario">
-        <MappingFragment StoreEntitySet="usuario">
-          <ScalarProperty Name="nIdUsuario" ColumnName="nIdUsuario" />
-          <ScalarProperty Name="nRol" ColumnName="nRol" />
-          <ScalarProperty Name="sUsuario" ColumnName="sUsuario" />
-          <ScalarProperty Name="sApellido" ColumnName="sApellido" />
-          <ScalarProperty Name="nEdad" ColumnName="nEdad" />
-          <ScalarProperty Name="sMatricula" ColumnName="sMatricula" />
-          <ScalarProperty Name="dFechaNacimiento" ColumnName="dFechaNacimiento" />
-          <ScalarProperty Name="sPais" ColumnName="sPais" />
-          <ScalarProperty Name="sProvincia" ColumnName="sProvincia" />
-          <ScalarProperty Name="sCiudad" ColumnName="sCiudad" />
-          <ScalarProperty Name="nPacienteDe" ColumnName="nPacienteDe" />
+    <EntitySetMapping Name="ImagenTratamiento">
+      <EntityTypeMapping TypeName="appergerModel.ImagenTratamiento">
+        <MappingFragment StoreEntitySet="ImagenTratamiento">
+          <ScalarProperty Name="nIdImagen" ColumnName="nIdImagen" />
+          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
+          <ScalarProperty Name="nIdImagenTra" ColumnName="nIdImagenTra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoTratamiento">
+      <EntityTypeMapping TypeName="appergerModel.VideoTratamiento">
+        <MappingFragment StoreEntitySet="VideoTratamiento">
+          <ScalarProperty Name="nIdVideo" ColumnName="nIdVideo" />
+          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
+          <ScalarProperty Name="nIdVideoTra" ColumnName="nIdVideoTra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Imagen">
+      <EntityTypeMapping TypeName="appergerModel.Imagen">
+        <MappingFragment StoreEntitySet="Imagen">
+          <ScalarProperty Name="nIdCategoria" ColumnName="nIdCategoria" />
+          <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
+          <ScalarProperty Name="sImagen" ColumnName="sImagen" />
+          <ScalarProperty Name="nIdImagen" ColumnName="nIdImagen" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Video">
       <EntityTypeMapping TypeName="appergerModel.Video">
         <MappingFragment StoreEntitySet="Video">
-          <ScalarProperty Name="nIdVideo" ColumnName="nIdVideo" />
-          <ScalarProperty Name="sVideo" ColumnName="sVideo" />
-          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
           <ScalarProperty Name="nIdCategoria" ColumnName="nIdCategoria" />
+          <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
+          <ScalarProperty Name="nFin" ColumnName="nFin" />
+          <ScalarProperty Name="nInicio" ColumnName="nInicio" />
+          <ScalarProperty Name="sVideo" ColumnName="sVideo" />
+          <ScalarProperty Name="nIdVideo" ColumnName="nIdVideo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="appergerModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="nPacienteDe" ColumnName="nPacienteDe" />
+          <ScalarProperty Name="sCiudad" ColumnName="sCiudad" />
+          <ScalarProperty Name="sProvincia" ColumnName="sProvincia" />
+          <ScalarProperty Name="sPais" ColumnName="sPais" />
+          <ScalarProperty Name="dFechaNacimiento" ColumnName="dFechaNacimiento" />
+          <ScalarProperty Name="sMatricula" ColumnName="sMatricula" />
+          <ScalarProperty Name="nEdad" ColumnName="nEdad" />
+          <ScalarProperty Name="sApellido" ColumnName="sApellido" />
+          <ScalarProperty Name="sNombre" ColumnName="sNombre" />
+          <ScalarProperty Name="sContraseña" ColumnName="sContraseña" />
+          <ScalarProperty Name="sUsuario" ColumnName="sUsuario" />
+          <ScalarProperty Name="nRol" ColumnName="nRol" />
+          <ScalarProperty Name="nIdUsuario" ColumnName="nIdUsuario" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

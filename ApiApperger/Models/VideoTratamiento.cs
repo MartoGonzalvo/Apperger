@@ -12,15 +12,13 @@ namespace ApiApperger.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Selfie
+    public partial class VideoTratamiento
     {
-        public int nIdSelfie { get; set; }
+        public int nIdVideoTra { get; set; }
         public Nullable<int> nIdTratamiento { get; set; }
-        public Nullable<int> nIdEmocionElegida { get; set; }
-        public Nullable<int> nIdEmocionRealizada { get; set; }
+        public Nullable<int> nIdVideo { get; set; }
     
-        public virtual Emocion Emocion { get; set; }
-        public virtual Emocion Emocion1 { get; set; }
         public virtual Tratamiento Tratamiento { get; set; }
+        public virtual Video Video { get; set; }
     }
 }

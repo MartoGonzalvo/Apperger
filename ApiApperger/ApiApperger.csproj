@@ -212,6 +212,9 @@
     <Compile Include="Models\Imagen.cs">
       <DependentUpon>AppergerDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ImagenTratamiento.cs">
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Rol.cs">
       <DependentUpon>AppergerDB.tt</DependentUpon>
     </Compile>
@@ -225,6 +228,9 @@
       <DependentUpon>AppergerDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Video.cs">
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VideoTratamiento.cs">
       <DependentUpon>AppergerDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
