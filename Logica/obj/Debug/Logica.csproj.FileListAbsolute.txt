@@ -17,3 +17,13 @@ C:\Users\personal\Source\Repos\AppergerWeb2\Logica\obj\Debug\Logica.csproj.CoreC
 C:\Users\personal\Source\Repos\AppergerWeb2\Logica\obj\Debug\Logica.csproj.CopyComplete
 C:\Users\personal\Source\Repos\AppergerWeb2\Logica\obj\Debug\Logica.dll
 C:\Users\personal\Source\Repos\AppergerWeb2\Logica\obj\Debug\Logica.pdb
+C:\proyecto\AppergerWeb\Logica\bin\Logica.dll.config
+C:\proyecto\AppergerWeb\Logica\bin\Logica.dll
+C:\proyecto\AppergerWeb\Logica\bin\Logica.pdb
+C:\proyecto\AppergerWeb\Logica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\proyecto\AppergerWeb\Logica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\proyecto\AppergerWeb\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+C:\proyecto\AppergerWeb\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\proyecto\AppergerWeb\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\proyecto\AppergerWeb\Logica\obj\Debug\Logica.dll
+C:\proyecto\AppergerWeb\Logica\obj\Debug\Logica.pdb

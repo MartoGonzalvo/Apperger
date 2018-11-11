@@ -184,54 +184,59 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\EmocionesController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AppergerDB.Context.cs">
+    <Compile Include="Models\appergerEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppergerDB.Context.tt</DependentUpon>
+      <DependentUpon>appergerEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AppergerDB.cs">
+    <Compile Include="Models\appergerEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppergerDB.tt</DependentUpon>
+      <DependentUpon>appergerEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AppergerDB.Designer.cs">
+    <Compile Include="Models\appergerEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppergerDB.edmx</DependentUpon>
+      <DependentUpon>appergerEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Categoria.cs">
-      <DependentUpon>AppergerDB.tt</DependentUpon>
+      <DependentUpon>appergerEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\database_firewall_rules.cs">
+      <DependentUpon>appergerEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Emocion.cs">
-      <DependentUpon>AppergerDB.tt</DependentUpon>
+      <DependentUpon>appergerEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Imagen.cs">
-      <DependentUpon>AppergerDB.tt</DependentUpon>
+      <DependentUpon>appergerEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ImagenTratamiento.cs">
-      <DependentUpon>AppergerDB.tt</DependentUpon>
+      <DependentUpon>appergerEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Rol.cs">
-      <DependentUpon>AppergerDB.tt</DependentUpon>
+      <DependentUpon>appergerEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Selfie.cs">
-      <DependentUpon>AppergerDB.tt</DependentUpon>
+      <DependentUpon>appergerEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tratamiento.cs">
-      <DependentUpon>AppergerDB.tt</DependentUpon>
+      <DependentUpon>appergerEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\usuario.cs">
-      <DependentUpon>AppergerDB.tt</DependentUpon>
+      <DependentUpon>appergerEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Video.cs">
-      <DependentUpon>AppergerDB.tt</DependentUpon>
+      <DependentUpon>appergerEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VideoTratamiento.cs">
-      <DependentUpon>AppergerDB.tt</DependentUpon>
+      <DependentUpon>appergerEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -242,15 +247,15 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\AppergerDB.Context.tt">
+    <Content Include="Models\appergerEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AppergerDB.Context.cs</LastGenOutput>
-      <DependentUpon>AppergerDB.edmx</DependentUpon>
+      <DependentUpon>appergerEntities.edmx</DependentUpon>
+      <LastGenOutput>appergerEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\AppergerDB.tt">
+    <Content Include="Models\appergerEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AppergerDB.edmx</DependentUpon>
-      <LastGenOutput>AppergerDB.cs</LastGenOutput>
+      <DependentUpon>appergerEntities.edmx</DependentUpon>
+      <LastGenOutput>appergerEntities.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -276,13 +281,15 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\AppergerDB.edmx">
+    <EntityDeploy Include="Models\appergerEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AppergerDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>appergerEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\AppergerDB.edmx.diagram">
-      <DependentUpon>AppergerDB.edmx</DependentUpon>
+    <Content Include="Models\appergerEntities.edmx.diagram">
+      <DependentUpon>appergerEntities.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\ApiApperger - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ApiApperger20181109074939 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

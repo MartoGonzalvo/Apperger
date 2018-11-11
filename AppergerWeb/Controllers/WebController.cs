@@ -12,7 +12,7 @@ namespace AppergerWeb.Controllers
 {
     public class WebController : Controller
     {
-        appergerEntities DB = new appergerEntities(); //conexion a la db de la api
+        appergerEntities1 DB = new appergerEntities1(); //conexion a la db de la api
 
         // GET: Web
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace AppergerWeb.Controllers
         {           
             try
             {
-                DB.usuario.Add(modelo);
+                DB.usuarios.Add(modelo);
                 DB.SaveChanges();
 
             }
