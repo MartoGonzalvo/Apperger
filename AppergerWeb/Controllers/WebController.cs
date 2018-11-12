@@ -1,4 +1,4 @@
-﻿using ApiApperger.Models;
+﻿using AppergerWeb.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace AppergerWeb.Controllers
 {
     public class WebController : Controller
     {
-        appergerEntities1 DB = new appergerEntities1(); //conexion a la db de la api
+        appergerEntities1 DB = new AppergerWeb.Models.appergerEntities1(); //conexion a la db de la api
 
         // GET: Web
         public ActionResult Index()
@@ -26,7 +26,10 @@ namespace AppergerWeb.Controllers
         }
         public ActionResult Pacientes()
         {
-            return View();
+            var listado = DB.usuario.ToList();
+
+            return View(listado);
+          
         }
 
 
@@ -35,8 +38,10 @@ namespace AppergerWeb.Controllers
             return View();
         }
 
-        public ActionResult CrearEditarUsuario(usuario modelo)
+        public ActionResult CrearEditarUsuario() //despues que reciba id de psicologue para listar sus pacientes
         {
+        
+
             return View();
 
         }
@@ -46,16 +51,20 @@ namespace AppergerWeb.Controllers
         {           
             try
             {
-                DB.usuarios.Add(modelo);
+                DB.usuario.Add(modelo);
                 DB.SaveChanges();
+                var listado = DB.usuario.ToList();
 
+
+
+                return View("Pacientes", listado);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
             ;
-            return View("Pacientes");
+           
         }
                     }
 }

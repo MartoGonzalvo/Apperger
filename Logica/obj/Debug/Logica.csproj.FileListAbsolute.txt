@@ -27,3 +27,16 @@ C:\proyecto\AppergerWeb\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
 C:\proyecto\AppergerWeb\Logica\obj\Debug\Logica.csproj.CopyComplete
 C:\proyecto\AppergerWeb\Logica\obj\Debug\Logica.dll
 C:\proyecto\AppergerWeb\Logica\obj\Debug\Logica.pdb
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\bin\Logica.dll.config
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\bin\Logica.dll
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\bin\Logica.pdb
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\bin\EntityFramework.dll
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\bin\EntityFramework.SqlServer.dll
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\bin\EntityFramework.xml
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\bin\EntityFramework.SqlServer.xml
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\obj\Debug\Logica.dll
+C:\Users\HIGGE\Source\Repos\AppergerWeb3\Logica\obj\Debug\Logica.pdb

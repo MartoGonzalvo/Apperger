@@ -155,6 +155,51 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AppergerDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppergerDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppergerDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppergerDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppergerDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Categoria.cs">
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Emocion.cs">
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Imagen.cs">
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImagenTratamiento.cs">
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rol.cs">
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Selfie.cs">
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tratamiento.cs">
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usuario.cs">
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Video.cs">
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VideoTratamiento.cs">
+      <DependentUpon>AppergerDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +324,16 @@
     <Content Include="assets\plugins\d3\LICENSE" />
     <Content Include="assets\plugins\d3\README.md" />
     <Content Include="assets\plugins\gmaps\gmaps.min.js.map" />
+    <Content Include="Models\AppergerDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AppergerDB.edmx</DependentUpon>
+      <LastGenOutput>AppergerDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AppergerDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AppergerDB.edmx</DependentUpon>
+      <LastGenOutput>AppergerDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\custom.min.js" />
     <Content Include="Scripts\dashboard1.js" />
@@ -595,7 +650,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -607,6 +661,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Models\AppergerDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AppergerDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AppergerDB.edmx.diagram">
+      <DependentUpon>AppergerDB.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="scss\app.scss" />
     <Content Include="scss\colors\blue.scss" />
@@ -804,6 +865,7 @@
     <Content Include="Views\CrearEditarUsuario.cshtml" />
     <Content Include="Views\Web\CrearEditarUsuario.cshtml" />
     <Content Include="Views\Web\Login.cshtml" />
+    <Content Include="Views\Web\ListadoPacientes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiApperger\ApiApperger.csproj">

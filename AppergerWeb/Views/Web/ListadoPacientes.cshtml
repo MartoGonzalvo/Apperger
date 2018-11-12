@@ -1,0 +1,96 @@
+﻿@model IEnumerable<AppergerWeb.Models.usuario>
+
+@{
+    ViewBag.Title = "ListadoPacientes";
+    Layout = null;
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sContraseña)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sNombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sApellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nEdad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sMatricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dFechaNacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sPais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sProvincia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sCiudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nPacienteDe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rol.sDescripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sContraseña)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sNombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sApellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nEdad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sMatricula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dFechaNacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sPais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sProvincia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sCiudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nPacienteDe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rol.sDescripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.nIdUsuario }) |
+            @Html.ActionLink("Details", "Details", new { id=item.nIdUsuario }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.nIdUsuario })
+        </td>
+    </tr>
+}
+
+</table>

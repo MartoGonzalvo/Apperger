@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="appergerModelStoreContainer" CdmEntityContainer="appergerEntities">
+  <EntityContainerMapping StorageEntityContainer="appergerModelStoreContainer" CdmEntityContainer="appergerEntities1">
     <EntitySetMapping Name="Categoria">
       <EntityTypeMapping TypeName="appergerModel.Categoria">
         <MappingFragment StoreEntitySet="Categoria">
@@ -23,8 +23,17 @@
         <MappingFragment StoreEntitySet="Imagen">
           <ScalarProperty Name="nIdImagen" ColumnName="nIdImagen" />
           <ScalarProperty Name="sImagen" ColumnName="sImagen" />
-          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
+          <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
           <ScalarProperty Name="nIdCategoria" ColumnName="nIdCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImagenTratamiento">
+      <EntityTypeMapping TypeName="appergerModel.ImagenTratamiento">
+        <MappingFragment StoreEntitySet="ImagenTratamiento">
+          <ScalarProperty Name="nIdImagenTra" ColumnName="nIdImagenTra" />
+          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
+          <ScalarProperty Name="nIdImagen" ColumnName="nIdImagen" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -66,6 +75,8 @@
           <ScalarProperty Name="nIdUsuario" ColumnName="nIdUsuario" />
           <ScalarProperty Name="nRol" ColumnName="nRol" />
           <ScalarProperty Name="sUsuario" ColumnName="sUsuario" />
+          <ScalarProperty Name="sContraseña" ColumnName="sContraseña" />
+          <ScalarProperty Name="sNombre" ColumnName="sNombre" />
           <ScalarProperty Name="sApellido" ColumnName="sApellido" />
           <ScalarProperty Name="nEdad" ColumnName="nEdad" />
           <ScalarProperty Name="sMatricula" ColumnName="sMatricula" />
@@ -82,8 +93,19 @@
         <MappingFragment StoreEntitySet="Video">
           <ScalarProperty Name="nIdVideo" ColumnName="nIdVideo" />
           <ScalarProperty Name="sVideo" ColumnName="sVideo" />
-          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
+          <ScalarProperty Name="nInicio" ColumnName="nInicio" />
+          <ScalarProperty Name="nFin" ColumnName="nFin" />
+          <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
           <ScalarProperty Name="nIdCategoria" ColumnName="nIdCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoTratamiento">
+      <EntityTypeMapping TypeName="appergerModel.VideoTratamiento">
+        <MappingFragment StoreEntitySet="VideoTratamiento">
+          <ScalarProperty Name="nIdVideoTra" ColumnName="nIdVideoTra" />
+          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
+          <ScalarProperty Name="nIdVideo" ColumnName="nIdVideo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
