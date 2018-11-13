@@ -2,7 +2,7 @@
 @model usuario
 
 @{
-    
+    if (Session["sessionLogin"] == null) { Response.Redirect("login"); }
     ViewBag.Title = "CrearEditarUsuario";
 }
 

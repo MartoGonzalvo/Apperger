@@ -1,0 +1,8 @@
+﻿
+@{
+    ViewBag.Title = "Logout";
+    if (Session["sessionLogin"] == null) { Response.Redirect("login"); }
+}
+
+<h2>Logout</h2>
+

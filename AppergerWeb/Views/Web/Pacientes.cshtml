@@ -1,4 +1,5 @@
 ﻿@{
+    if (Session["sessionLogin"] == null) { Response.Redirect("login"); }
     ViewBag.Title = "Pacientes";
 }
 <h2>Listado de Pacientes</h2>

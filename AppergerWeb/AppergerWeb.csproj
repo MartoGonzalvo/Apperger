@@ -866,6 +866,8 @@
     <Content Include="Views\Web\CrearEditarUsuario.cshtml" />
     <Content Include="Views\Web\Login.cshtml" />
     <Content Include="Views\Web\ListadoPacientes.cshtml" />
+    <Content Include="Views\Web\Logout.cshtml" />
+    <Content Include="Views\Web\CrearPsicologo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiApperger\ApiApperger.csproj">
