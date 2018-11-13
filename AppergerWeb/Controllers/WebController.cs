@@ -29,7 +29,7 @@ namespace AppergerWeb.Controllers
             var listado = DB.usuario.ToList();
 
             return View(listado);
-          
+
         }
 
 
@@ -38,33 +38,70 @@ namespace AppergerWeb.Controllers
             return View();
         }
 
-        public ActionResult CrearEditarUsuario() //despues que reciba id de psicologue para listar sus pacientes
+        public ActionResult CrearEditarUsuario(int? nUsuarioId) //despues que reciba id de psicologue para listar sus pacientes
         {
-        
+            if (nUsuarioId.Equals(null))
+            {
+                return View();
 
-            return View();
+            }
+            else
+            {
+
+                var usuario = DB.usuario.Single(x => x.nIdUsuario == nUsuarioId);
+
+                return View(usuario);
+            }
+
+
 
         }
 
-        
+
         public ActionResult CrearEditarUsuario1(usuario modelo)
-        {           
-            try
+        {
+            if (modelo.nIdUsuario.Equals(null))
             {
-                DB.usuario.Add(modelo);
+                try
+                {
+                    DB.usuario.Add(modelo);
+                    // modelo.nPacienteDe=user
+                    DB.SaveChanges();
+                    var listado = DB.usuario.ToList();
+
+
+
+                    return RedirectToAction("Pacientes", listado);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            else
+            {
+               
+
+                var usuario = DB.usuario.Single(x => x.nIdUsuario == modelo.nIdUsuario);
+                DB.Entry(usuario).CurrentValues.SetValues(modelo);
+            //    DB.usuario.Add(modelo);
                 DB.SaveChanges();
                 var listado = DB.usuario.ToList();
+                return RedirectToAction("Pacientes", listado);
 
 
 
-                return View("Pacientes", listado);
+
+
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            ;
-           
+
+
+
+
         }
-                    }
+    }
 }
+           
+           
+        //}
+        //            }

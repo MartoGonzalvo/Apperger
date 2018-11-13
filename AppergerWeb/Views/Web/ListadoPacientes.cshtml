@@ -6,15 +6,12 @@
 }
 
 
-<table class="table">
+<table class="table dataTable">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.sUsuario)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sContraseña)
-        </th>
-        <th>
+               <th>
             @Html.DisplayNameFor(model => model.sNombre)
         </th>
         <th>
@@ -38,13 +35,8 @@
         <th>
             @Html.DisplayNameFor(model => model.sCiudad)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nPacienteDe)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rol.sDescripcion)
-        </th>
-        <th></th>
+       
+        <th style="width:100px;"></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -52,10 +44,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.sUsuario)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.sContraseña)
-        </td>
-        <td>
+               <td>
             @Html.DisplayFor(modelItem => item.sNombre)
         </td>
         <td>
@@ -79,16 +68,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.sCiudad)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nPacienteDe)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rol.sDescripcion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.nIdUsuario }) |
-            @Html.ActionLink("Details", "Details", new { id=item.nIdUsuario }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.nIdUsuario })
+              
+        <td style="width:100px;">
+
+           <a href="@Url.Action("CrearEditarUsuario", "web", new { nUsuarioId=item.nIdUsuario })"> <i class="fas fa-user-edit"></i></a>
+            <a href="@Url.Action("borrar ", "web", new { id=item.nIdUsuario })"> <i class="fas fa-trash-alt text-danger"></i></a>
+            
         </td>
     </tr>
 }
