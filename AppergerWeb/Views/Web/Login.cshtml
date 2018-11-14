@@ -98,17 +98,18 @@
             <p id="profile-name" class="profile-name-card"></p>
 
             <span id="reauth-email" class="reauth-email"></span>
-            <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Email address" required autofocus>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
+        <span class="text-warning">@ViewBag.mensajeError</span>
             <div id="remember" class="checkbox">
                 <label>
-                    <input type="checkbox" value="remember-me"> Remember me
+                    <input type="checkbox" value="remember-me"> Recordar Contraseña
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button>
 
             <a href="#" class="forgot-password">
-                Forgot the password?
+                Olvidaste la contraseña?
             </a>
             <br />
             <a href="CrearPsicologo" class="forgot-password">

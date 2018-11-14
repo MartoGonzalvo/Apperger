@@ -42,6 +42,7 @@ namespace AppergerWeb.Controllers
             var user = DB.usuario.Where(x => x.sUsuario == usuario && x.sContraseña == password).FirstOrDefault();
             if (user == null)
             {
+                ViewBag.mensajeError = "Usuario o contraseña incorrecta";
                 return View("Login");
             }
             else
