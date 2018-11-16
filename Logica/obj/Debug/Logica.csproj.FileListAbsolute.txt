@@ -54,3 +54,17 @@ C:\Users\personal\Source\Repos\AppergerWeb4\Logica\obj\Debug\Logica.csproj.CoreC
 C:\Users\personal\Source\Repos\AppergerWeb4\Logica\obj\Debug\Logica.csproj.CopyComplete
 C:\Users\personal\Source\Repos\AppergerWeb4\Logica\obj\Debug\Logica.dll
 C:\Users\personal\Source\Repos\AppergerWeb4\Logica\obj\Debug\Logica.pdb
+C:\Users\martin\source\repos\AppergerWeb\Logica\bin\Logica.dll.config
+C:\Users\martin\source\repos\AppergerWeb\Logica\bin\Logica.dll
+C:\Users\martin\source\repos\AppergerWeb\Logica\bin\Logica.pdb
+C:\Users\martin\source\repos\AppergerWeb\Logica\bin\EntityFramework.dll
+C:\Users\martin\source\repos\AppergerWeb\Logica\bin\EntityFramework.SqlServer.dll
+C:\Users\martin\source\repos\AppergerWeb\Logica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\martin\source\repos\AppergerWeb\Logica\bin\EntityFramework.xml
+C:\Users\martin\source\repos\AppergerWeb\Logica\bin\EntityFramework.SqlServer.xml
+C:\Users\martin\source\repos\AppergerWeb\Logica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\martin\source\repos\AppergerWeb\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+C:\Users\martin\source\repos\AppergerWeb\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\martin\source\repos\AppergerWeb\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\martin\source\repos\AppergerWeb\Logica\obj\Debug\Logica.dll
+C:\Users\martin\source\repos\AppergerWeb\Logica\obj\Debug\Logica.pdb

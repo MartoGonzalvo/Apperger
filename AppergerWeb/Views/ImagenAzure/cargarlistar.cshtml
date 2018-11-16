@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "cargarlistar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model AppergerWeb.Models.imagenes
+
+<h2>cargarlistar</h2>
+
+@using (Html.BeginForm("Cargarlistar2", "imagenAzure", FormMethod.Post,new {enctype="multipart/form-data" } ))
+{
+    <p>subir imagen</p>
+    <input type="file"  class="form-control file-caption" id="imagen" />
+    <input type="submit" value="Submit" />
+
+}
+
+@*https://www.youtube.com/watch?v=Zv5mScADT-s*@

@@ -175,6 +175,7 @@
     <Compile Include="Areas\Web\Controllers\TratamientoesController.cs" />
     <Compile Include="Areas\Web\WebAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagenAzureController.cs" />
     <Compile Include="Controllers\WebController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -203,6 +204,7 @@
     <Compile Include="Models\Imagen.cs">
       <DependentUpon>AppergerDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\imagenes.cs" />
     <Compile Include="Models\ImagenTratamiento.cs">
       <DependentUpon>AppergerDB.tt</DependentUpon>
     </Compile>
@@ -657,7 +659,9 @@
     <Content Include="scss\icons\weather-icons\less\css\variables-night.css" />
     <Content Include="scss\icons\weather-icons\less\css\variables-time.css" />
     <Content Include="scss\icons\weather-icons\less\css\variables-wind-names.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -900,6 +904,7 @@
     <Content Include="Views\Web\ListadoPacientes.cshtml" />
     <Content Include="Views\Web\Logout.cshtml" />
     <Content Include="Views\Web\CrearPsicologo.cshtml" />
+    <Content Include="Views\ImagenAzure\cargarlistar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiApperger\ApiApperger.csproj">
