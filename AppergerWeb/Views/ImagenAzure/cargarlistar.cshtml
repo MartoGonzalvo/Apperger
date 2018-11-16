@@ -10,7 +10,7 @@
 @using (Html.BeginForm("Cargarlistar2", "imagenAzure", FormMethod.Post,new {enctype="multipart/form-data" } ))
 {
     <p>subir imagen</p>
-    <input type="file"  class="form-control file-caption" id="imagen" />
+    <input type="file"  name="file" class="form-control file-caption" id="imagen" />
     <input type="submit" value="Submit" />
 
 }

@@ -27,7 +27,7 @@ namespace AppergerWeb.Controllers
             {
                 CloudStorageAccount StorageAccount = CloudStorageAccount.Parse(ConfigurationManager.ConnectionStrings["appergerstorage_AzureStorageConnectionString"].ConnectionString);
                 CloudBlobClient blobclient = StorageAccount.CreateCloudBlobClient();
-                CloudBlobContainer container = blobclient.GetContainerReference("imagenes2");
+                CloudBlobContainer container = blobclient.GetContainerReference("imagenes");
                 CloudBlockBlob blockBlob = container.GetBlockBlobReference(file.FileName);
 
                 blockBlob.UploadFromStream(file.InputStream);
