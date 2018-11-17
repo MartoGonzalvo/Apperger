@@ -172,10 +172,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Web\Controllers\TratamientoesController.cs" />
-    <Compile Include="Areas\Web\WebAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagenAzureController.cs" />
+    <Compile Include="Controllers\ImagenController.cs" />
     <Compile Include="Controllers\WebController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -678,8 +677,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Web\Models\" />
-    <Folder Include="Areas\Web\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -698,12 +695,6 @@
     <Content Include="Models\AppergerDB.edmx.diagram">
       <DependentUpon>AppergerDB.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Web\Views\web.config" />
-    <Content Include="Areas\Web\Views\Tratamientoes\Create.cshtml" />
-    <Content Include="Areas\Web\Views\Tratamientoes\Delete.cshtml" />
-    <Content Include="Areas\Web\Views\Tratamientoes\Details.cshtml" />
-    <Content Include="Areas\Web\Views\Tratamientoes\Edit.cshtml" />
-    <Content Include="Areas\Web\Views\Tratamientoes\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="scss\app.scss" />
     <Content Include="scss\colors\blue.scss" />
@@ -905,6 +896,11 @@
     <Content Include="Views\Web\Logout.cshtml" />
     <Content Include="Views\Web\CrearPsicologo.cshtml" />
     <Content Include="Views\ImagenAzure\cargarlistar.cshtml" />
+    <Content Include="Views\Imagen\Create.cshtml" />
+    <Content Include="Views\Imagen\Delete.cshtml" />
+    <Content Include="Views\Imagen\Details.cshtml" />
+    <Content Include="Views\Imagen\Edit.cshtml" />
+    <Content Include="Views\Imagen\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiApperger\ApiApperger.csproj">

@@ -22,7 +22,7 @@ namespace AppergerWeb.Controllers
             //usuario usuario = new usuario();
             //DB.usuario.Where(x => x.nPacienteDe).tolist();
 
-            return View();
+            return View("login");
         }
         public ActionResult Pacientes()
         {
@@ -37,6 +37,7 @@ namespace AppergerWeb.Controllers
         {
             return View();
         }
+        [HttpPost]
         public ActionResult Login1(string usuario, string password)
         {
             var user = DB.usuario.Where(x => x.sUsuario == usuario && x.sContraseña == password).FirstOrDefault();

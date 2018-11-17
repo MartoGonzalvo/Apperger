@@ -87,7 +87,7 @@
     you can substitue the span of reauth email for a input with the email and
     include the remember me checkbox
     -->
-@using (Html.BeginForm("Login1", "web"))
+@using (Html.BeginForm("Login1", "web", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
