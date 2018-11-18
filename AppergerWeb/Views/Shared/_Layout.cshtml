@@ -1,4 +1,7 @@
-﻿
+﻿@{
+    if (Session["sessionLogin"] == null) { Response.Redirect("Web/login"); }
+    ViewBag.Title = "Apperger";
+}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -128,7 +131,7 @@
                             <a class="waves-effect waves-dark" href="~/Web/Pacientes" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Pacientes</span></a>
                         </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="~/Imagen/Tratamientoes" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Tratamiento</span></a>
+                            <a class="waves-effect waves-dark" href="~/Tratamiento" aria-expanded="false"><i class="mdi mdi-emoticon"></i><span class="hide-menu">Tratamiento</span></a>
                         </li>
                         <li>
                             <a class="waves-effect waves-dark" href="~/imagen" aria-expanded="false"><i class="far fa-image"></i><span class="hide-menu">Imagen</span></a>

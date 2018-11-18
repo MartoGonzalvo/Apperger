@@ -175,6 +175,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagenAzureController.cs" />
     <Compile Include="Controllers\ImagenController.cs" />
+    <Compile Include="Controllers\TratamientoController.cs" />
     <Compile Include="Controllers\WebController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -677,6 +678,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Paciente\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -901,6 +903,11 @@
     <Content Include="Views\Imagen\Details.cshtml" />
     <Content Include="Views\Imagen\Edit.cshtml" />
     <Content Include="Views\Imagen\Index.cshtml" />
+    <Content Include="Views\Tratamiento\Create.cshtml" />
+    <Content Include="Views\Tratamiento\Delete.cshtml" />
+    <Content Include="Views\Tratamiento\Details.cshtml" />
+    <Content Include="Views\Tratamiento\Edit.cshtml" />
+    <Content Include="Views\Tratamiento\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiApperger\ApiApperger.csproj">
