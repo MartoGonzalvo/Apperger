@@ -1,0 +1,63 @@
+﻿@model AppergerWeb.Models.Video
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta segure de eliminar este video?</h3>
+<div>
+    <h4>Video</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sVideo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sVideo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.nInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nInicio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.nFin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nFin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sDescripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sDescripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.sDescripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.sDescripcion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

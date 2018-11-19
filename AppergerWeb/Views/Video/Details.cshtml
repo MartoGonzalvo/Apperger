@@ -1,0 +1,56 @@
+﻿@model AppergerWeb.Models.Video
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Video</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sVideo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sVideo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.nInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nInicio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.nFin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nFin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sDescripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sDescripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.sDescripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.sDescripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.nIdVideo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
