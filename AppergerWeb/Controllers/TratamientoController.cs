@@ -39,6 +39,8 @@ namespace AppergerWeb.Controllers
         // GET: Tratamiento/Create
         public ActionResult Create()
         {
+            ViewBag.nIdImagen = new SelectList(db.usuario, "nIdImagen", "sDescripcion");
+
             ViewBag.nIdPaciente = new SelectList(db.usuario, "nIdUsuario", "sUsuario");
             ViewBag.nIdPsicologo = new SelectList(db.usuario, "nIdUsuario", "sUsuario");
             return View();

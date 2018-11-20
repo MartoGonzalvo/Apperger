@@ -5,66 +5,63 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.dFechaInicio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dFechaFin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.bSelfie)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.bImagen)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.bVideo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.usuario.sUsuario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.usuario1.sUsuario)
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-responsive Datatable table-striped table-bordered table" >
+    <thead>
+        <tr>
+            <th>
+                Paciente
+            </th>
+            <th>
+                Inicio
+            </th>
+            <th>
+                Fin
+            </th>
+            
+            <th>
+               Imagen
+            </th>
+            <th>
+              Video
+            </th>
+          
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.usuario.sUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dFechaInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dFechaFin)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImagenTratamiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VideoTratamiento)
+                </td>
+               
+              
+                <td>
+                    <a href="@Url.Action("CrearEditarUsuario", "web", new { nUsuarioId=item.usuario })"> <i class="fas fa-user-edit"></i></a>
+                    <a href="@Url.Action("borrar ", "web", new { id=item.usuario })"> <i class="fas fa-trash-alt text-danger"></i></a>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.dFechaInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dFechaFin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.bSelfie)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.bImagen)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.bVideo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.usuario.sUsuario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.usuario1.sUsuario)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.nIdTratamiento }) |
-            @Html.ActionLink("Details", "Details", new { id=item.nIdTratamiento }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.nIdTratamiento })
-        </td>
-    </tr>
-}
+                </td>
+            </tr>
+
+        }
+    </tbody>
 
 </table>

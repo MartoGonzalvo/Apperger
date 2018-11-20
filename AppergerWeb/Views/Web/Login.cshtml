@@ -94,12 +94,13 @@
     <div class="container">
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <img id="profile-img" class="profile-img-card" src="~/assets/images/favicon.png" />
             <p id="profile-name" class="profile-name-card"></p>
 
             <span id="reauth-email" class="reauth-email"></span>
             <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
+        <br/>   
+        <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
         <span class="text-warning">@ViewBag.mensajeError</span>
             <div id="remember" class="checkbox">
                 <label>
@@ -112,9 +113,9 @@
                 Olvidaste la contraseña?
             </a>
             <br />
-            <a href="CrearPsicologo" class="forgot-password">
+            @*<a href="CrearPsicologo" class="forgot-password">
                 Registrate aquí.
-            </a>
+            </a>*@
         </div><!-- /card-container -->
     </div><!-- /container -->
 
