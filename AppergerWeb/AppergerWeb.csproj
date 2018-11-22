@@ -176,6 +176,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagenAzureController.cs" />
     <Compile Include="Controllers\ImagenController.cs" />
+    <Compile Include="Controllers\ImagenTratamientoController.cs" />
     <Compile Include="Controllers\TratamientoController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Controllers\WebController.cs" />
@@ -916,6 +917,11 @@
     <Content Include="Views\Video\Edit.cshtml" />
     <Content Include="Views\Video\Delete.cshtml" />
     <Content Include="Views\Categoria\Create.cshtml" />
+    <Content Include="Views\ImagenTratamiento\Create.cshtml" />
+    <Content Include="Views\ImagenTratamiento\Delete.cshtml" />
+    <Content Include="Views\ImagenTratamiento\Details.cshtml" />
+    <Content Include="Views\ImagenTratamiento\Edit.cshtml" />
+    <Content Include="Views\ImagenTratamiento\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiApperger\ApiApperger.csproj">

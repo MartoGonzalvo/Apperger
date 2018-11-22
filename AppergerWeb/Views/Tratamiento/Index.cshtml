@@ -8,60 +8,64 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table table-responsive Datatable table-striped table-bordered table" >
-    <thead>
-        <tr>
-            <th>
-                Paciente
-            </th>
-            <th>
-                Inicio
-            </th>
-            <th>
-                Fin
-            </th>
-            
-            <th>
-               Imagen
-            </th>
-            <th>
-              Video
-            </th>
-          
-            
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.usuario.sUsuario)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.dFechaInicio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.dFechaFin)
-                </td>
-                
-                <td>
-                    @Html.DisplayFor(modelItem => item.ImagenTratamiento)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VideoTratamiento)
-                </td>
-               
-              
-                <td>
-                    <a href="@Url.Action("CrearEditarUsuario", "web", new { nUsuarioId=item.usuario })"> <i class="fas fa-user-edit"></i></a>
-                    <a href="@Url.Action("borrar ", "web", new { id=item.usuario })"> <i class="fas fa-trash-alt text-danger"></i></a>
+<div class="row">
+    <!-- column -->
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-block">
+                <div class="table-responsive">
+                    <table class="table ">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Paciente
+                                </th>
+                                <th>
+                                    Inicio
+                                </th>
+                                <th>
+                                    Fin
+                                </th>
 
-                </td>
-            </tr>
+                                <th>
+                                    acciones
+                                </th>
 
-        }
-    </tbody>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.usuario.sUsuario)
+                                    </td>
+                                 
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.dFechaInicio)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.dFechaFin)
+                                    </td>
 
-</table>
+
+                                    <td>
+                                        <a href="@Url.Action("Index", "ImagenTratamiento", new { nUsuarioId=item.usuario })"><i class="far fa-images"></i></a>
+
+                                        <a href="@Url.Action("agregarVideo", "web", new { nUsuarioId=item.usuario })"> <i class="fas fa-video"></i></a>
+
+                                        <a href="@Url.Action("CrearEditarUsuario", "web", new { nUsuarioId=item.usuario })"> <i class="fas fa-user-edit"></i></a>
+                                        <a href="@Url.Action("borrar ", "web", new { id=item.usuario })"> <i class="fas fa-trash-alt text-danger"></i></a>
+
+                                    </td>
+                                </tr>
+
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

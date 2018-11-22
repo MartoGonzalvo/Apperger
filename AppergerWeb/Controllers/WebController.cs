@@ -26,7 +26,8 @@ namespace AppergerWeb.Controllers
         }
         public ActionResult Pacientes()
         {
-            var listado = DB.usuario.ToList();
+            var idPsicologo = Convert.ToInt16(Session["usuario"]);
+            var listado = DB.usuario.Where(x => x.nRol==3 && x.nPacienteDe== idPsicologo).ToList();
 
             return View(listado);
 
@@ -49,6 +50,7 @@ namespace AppergerWeb.Controllers
             else
             {
                 ViewBag.id = user.nIdUsuario;
+                Session["usuario"] = user.nIdUsuario;
                 System.Web.HttpContext.Current.Session["sessionLogin"] = ViewBag.id;
                 return View("../Home/Index");
 
@@ -107,10 +109,14 @@ namespace AppergerWeb.Controllers
 
         public ActionResult CrearEditarUsuario1(usuario modelo)
         {
-            if (modelo.nIdUsuario.Equals(null))
+            if (modelo.nIdUsuario.Equals(0))
             {
                 try
                 {
+                    modelo.nPacienteDe = Convert.ToInt16(Session["usuario"]);
+                    modelo.nRol = 3;
+                    modelo.sContraseña = "a123";
+
                     DB.usuario.Add(modelo);
                     // modelo.nPacienteDe=user
                     DB.SaveChanges();
