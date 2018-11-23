@@ -11,34 +11,29 @@
 <table class="table dataTable">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.sUsuario)
+           Usuario
         </th>
                <th>
-            @Html.DisplayNameFor(model => model.sNombre)
+            Nombre
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.sApellido)
+            Apellido
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nEdad)
+            Edad
+        </th>
+     
+        <th>
+            Pais
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.sMatricula)
+            Provincia
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dFechaNacimiento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sPais)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sProvincia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sCiudad)
+            Ciudad
         </th>
        
-        <th style="width:100px;"></th>
+        <th style="width:100px;">Accion</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -55,12 +50,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.nEdad)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.sMatricula)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.dFechaNacimiento)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.sPais)
         </td>

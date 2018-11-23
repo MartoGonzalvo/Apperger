@@ -17,7 +17,8 @@ namespace AppergerWeb.Controllers
         // GET: Tratamiento
         public ActionResult Index()
         {
-            var tratamiento = db.Tratamiento.Include(t => t.usuario).Include(t => t.usuario1);
+            int idPsicologo= Convert.ToInt16(Session["usuario"]);
+            var tratamiento = db.Tratamiento.Include(t => t.usuario).Include(t => t.usuario1).Where(t=> t.nIdPsicologo==idPsicologo);
             return View(tratamiento.ToList());
         }
 
@@ -39,7 +40,11 @@ namespace AppergerWeb.Controllers
         // GET: Tratamiento/Create
         public ActionResult Create()
         {
-            ViewBag.nIdPaciente = new SelectList(db.usuario, "nIdUsuario", "sUsuario");
+            int idPsicologo = Convert.ToInt16(Session["usuario"]);
+
+
+
+            ViewBag.nIdPaciente = new SelectList(db.usuario.Where(t => t.nPacienteDe == idPsicologo), "nIdUsuario", "sNombre");
             //ViewBag.nIdPsicologo = new SelectList(db.usuario, "nIdUsuario", "sUsuario");
             return View();
         }

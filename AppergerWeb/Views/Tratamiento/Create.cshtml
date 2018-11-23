@@ -30,18 +30,7 @@
                 @Html.ValidationMessageFor(model => model.dFechaFin, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.bSelfie, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.bSelfie)
-                    @Html.ValidationMessageFor(model => model.bSelfie, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-      
+          
 
 
         <div class="form-group">
@@ -60,6 +49,3 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

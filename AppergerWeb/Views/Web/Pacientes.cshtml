@@ -1,4 +1,6 @@
-﻿@{
+﻿
+
+@{
     if (Session["sessionLogin"] == null) { Response.Redirect("login"); }
     ViewBag.Title = "Pacientes";
 }
@@ -8,34 +10,23 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-block">
-          
-                   @Html.ActionLink(  " Agregar Paciente  ", "CrearEditarUsuario", "web", new AjaxOptions  {HttpMethod = "GET",
-                   InsertionMode = InsertionMode.Replace,
-                   UpdateTargetId = "ModalInformacion",
-                   OnComplete = "Modal();"})
                
+
+
+                       @Html.ActionLink(" Agregar Paciente  ", "CrearEditarUsuario", "web", new AjaxOptions
+                  {
+                      HttpMethod = "GET",
+                      InsertionMode = InsertionMode.Replace,
+                      UpdateTargetId = "ModalInformacion",
+                      OnComplete = "Modal();"
+                  }, new { @class = "btn btn-info btn-sm " })
+                   
+        
                 <div class="table table-striped table-bordered table-responsive" style="width:100%">
                     @Html.Partial("ListadoPacientes")
 
                     </div>
                 </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-lg"  role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-               
-             
-            </div>
-            @*<div class="modal-body">
-                @Html.Partial("crearEditarUsuario",null);
-            </div>*@
         </div>
     </div>
 </div>

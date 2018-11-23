@@ -15,8 +15,9 @@ namespace AppergerWeb.Controllers
         private appergerEntities1 db = new appergerEntities1();
 
         // GET: ImagenTratamiento
-        public ActionResult Index()
+        public ActionResult Index(int tratamientoId)
         {
+            ViewBag.tratamientoId = tratamientoId;
             var imagenTratamiento = db.ImagenTratamiento.Include(i => i.Imagen).Include(i => i.Tratamiento);
             return View(imagenTratamiento.ToList());
         }
@@ -37,8 +38,9 @@ namespace AppergerWeb.Controllers
         }
 
         // GET: ImagenTratamiento/Create
-        public ActionResult Create()
+        public ActionResult Create(int tratamientoId)
         {
+            ViewBag.tratamientoId = tratamientoId;
             ViewBag.nIdImagen = new SelectList(db.Imagen, "nIdImagen", "sDescripcion");
             ViewBag.nIdTratamiento = new SelectList(db.Tratamiento, "nIdTratamiento", "nIdTratamiento");
             return View();
@@ -49,10 +51,11 @@ namespace AppergerWeb.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "nIdImagenTra,nIdTratamiento,nIdImagen")] ImagenTratamiento imagenTratamiento)
+        public ActionResult Create([Bind(Include = "nIdImagenTra,nIdTratamiento,nIdImagen")] ImagenTratamiento imagenTratamiento, int tratamientoId)
         {
             if (ModelState.IsValid)
             {
+                imagenTratamiento.nIdTratamiento = tratamientoId;
                 db.ImagenTratamiento.Add(imagenTratamiento);
                 db.SaveChanges();
                 return RedirectToAction("Index");
