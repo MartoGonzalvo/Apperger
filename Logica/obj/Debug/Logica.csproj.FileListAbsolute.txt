@@ -68,3 +68,7 @@ C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\obj\Debug\Logica.csprojResolveAs
 C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
 C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\obj\Debug\Logica.dll
 C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\obj\Debug\Logica.pdb
+C:\proyecto\AppergerWeb\Logica\bin\EntityFramework.dll
+C:\proyecto\AppergerWeb\Logica\bin\EntityFramework.SqlServer.dll
+C:\proyecto\AppergerWeb\Logica\bin\EntityFramework.xml
+C:\proyecto\AppergerWeb\Logica\bin\EntityFramework.SqlServer.xml

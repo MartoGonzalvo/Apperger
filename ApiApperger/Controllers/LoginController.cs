@@ -15,17 +15,20 @@ namespace ApiApperger.Controllers
         [HttpGet]
         [ActionName("XAMARIN_Login")]
         // GET: api/Login/5  
-        public HttpResponseMessage Xamarin_login(string username, int password)
+        public HttpResponseMessage Xamarin_login(string username, string password)
         {
-            var user = DB.usuarios.Where(x => x.sUsuario == username && x.sMatricula == password).FirstOrDefault();
+            var user = DB.usuarios.Where(x => x.sUsuario == username && x.sContraseña == password).FirstOrDefault();
             if (user == null)
             {
                 return Request.CreateResponse(HttpStatusCode.Unauthorized, "Please Enter valid UserName and Password");
             }
             else
             {
+                
                 return Request.CreateResponse(HttpStatusCode.Accepted, "Success");
             }
         }
+
+        
     }
 }
