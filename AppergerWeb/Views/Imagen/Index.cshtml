@@ -10,39 +10,43 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-     
-        <th>
-            @Html.DisplayNameFor(model => model.sDescripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Categoria.sDescripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sImagen)
-        </th>
-        <th></th>
-    </tr>
+<div class="table table-striped table-bordered table-responsive" style="width:100%">
 
-@foreach (var item in Model) {
-    <tr>
-      
-        <td>
-            @Html.DisplayFor(modelItem => item.sDescripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Categoria.sDescripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.sImagen)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.nIdImagen }) |
-            @Html.ActionLink("Details", "Details", new { id=item.nIdImagen }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.nIdImagen })
-        </td>
-    </tr>
-}
+    <table class="table dataTable table-bordered">
+        <tr>
 
-</table>
+            <th>
+                Emocion
+            </th>
+            <th>
+                Descripcion
+            </th>
+            <th>
+               Imagen
+            </th>
+            <th>Accion</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.sDescripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.sDescripcion)
+                </td>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.sImagen)" height="70px" />
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.nIdImagen }) |
+
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.nIdImagen })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

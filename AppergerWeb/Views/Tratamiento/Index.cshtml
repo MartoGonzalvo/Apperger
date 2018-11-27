@@ -6,7 +6,7 @@
 }
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Tratamiento", "Create")
 </p>
 <div class="row">
     <!-- column -->
@@ -54,7 +54,6 @@
 
                                         <a href="@Url.Action("agregarVideo", "web", new { nUsuarioId=item.usuario })"> <i class="fas fa-video"></i></a>
 
-                                        <a href="@Url.Action("CrearEditarUsuario", "web", new { nUsuarioId=item.usuario })"> <i class="fas fa-user-edit"></i></a>
                                         <a href="@Url.Action("borrar ", "web", new { id=item.usuario })"> <i class="fas fa-trash-alt text-danger"></i></a>
 
                                     </td>

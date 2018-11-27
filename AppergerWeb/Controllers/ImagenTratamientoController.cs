@@ -16,7 +16,9 @@ namespace AppergerWeb.Controllers
 
         // GET: ImagenTratamiento
         public ActionResult Index(int tratamientoId)
-        {
+         {
+            var usuario = db.Tratamiento.Single(x => x.nIdTratamiento == tratamientoId);
+            ViewBag.Usuario = usuario.usuario.sNombre+ ' ' + usuario.usuario.sApellido;
             ViewBag.tratamientoId = tratamientoId;
             var imagenTratamiento = db.ImagenTratamiento.Include(i => i.Imagen).Include(i => i.Tratamiento);
             return View(imagenTratamiento.ToList());
@@ -102,7 +104,7 @@ namespace AppergerWeb.Controllers
         }
 
         // GET: ImagenTratamiento/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id,int tratamientoId )
         {
             if (id == null)
             {
@@ -113,7 +115,9 @@ namespace AppergerWeb.Controllers
             {
                 return HttpNotFound();
             }
-            return View(imagenTratamiento);
+            db.ImagenTratamiento.Remove(imagenTratamiento);
+            db.SaveChanges();
+            return RedirectToAction("Index", new { tratamientoId=tratamientoId});
         }
 
         // POST: ImagenTratamiento/Delete/5

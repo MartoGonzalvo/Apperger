@@ -5,20 +5,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Imagenes para tratamiento de @ViewBag.Usuario</h2>
 
 <p>
-    @Html.ActionLink("Nuevo Tratamiento", "Create", new {tratamientoId = ViewBag.tratamientoId })
+    @Html.ActionLink("  Seleccionar Imagen", "Create", new {tratamientoId = ViewBag.tratamientoId },new { @class = "fas fa-plus-square"})
 </p>
+<
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Imagen.sImagen)
+            Descripcion
         </th>
+        <th>Imagen</th>
         <th>
-            @Html.DisplayNameFor(model => model.Tratamiento.nIdTratamiento)
+            @Html.DisplayNameFor(model => model.Tratamiento.Categoria)
         </th>
-        <th></th>
+        <th>Accion</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -27,12 +29,15 @@
             @Html.DisplayFor(modelItem => item.Imagen.sDescripcion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Tratamiento.nIdTratamiento)
+          <img  src=@Html.DisplayFor(modelItem => item.Imagen.sImagen) height="70px;" />
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.nIdImagenTra }) |
-            @Html.ActionLink("Details", "Details", new { id=item.nIdImagenTra }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.nIdImagenTra })
+            @Html.DisplayFor(modelItem => item.Tratamiento.Categoria)
+        </td>
+        <td>
+           
+        
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.nIdImagenTra, tratamientoId = item.nIdTratamiento })
         </td>
     </tr>
 }

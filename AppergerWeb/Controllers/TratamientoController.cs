@@ -43,6 +43,7 @@ namespace AppergerWeb.Controllers
             int idPsicologo = Convert.ToInt16(Session["usuario"]);
 
 
+            ViewBag.nIdCategoria = new SelectList(db.Categoria.ToList(), "nIdCategoria", "sDescripcion");
 
             ViewBag.nIdPaciente = new SelectList(db.usuario.Where(t => t.nPacienteDe == idPsicologo), "nIdUsuario", "sNombre");
             //ViewBag.nIdPsicologo = new SelectList(db.usuario, "nIdUsuario", "sUsuario");

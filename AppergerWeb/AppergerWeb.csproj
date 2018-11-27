@@ -241,6 +241,7 @@
     <Content Include="assets\images\big\img6.jpg" />
     <Content Include="assets\images\custom-select.png" />
     <Content Include="assets\images\favicon.png" />
+    <Content Include="assets\images\logo header-01.png" />
     <Content Include="assets\images\logo-light-icon.png" />
     <Content Include="assets\images\logo-light-text.png" />
     <Content Include="assets\images\users\1.jpg" />
