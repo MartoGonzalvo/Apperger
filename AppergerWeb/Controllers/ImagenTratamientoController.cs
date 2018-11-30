@@ -20,7 +20,8 @@ namespace AppergerWeb.Controllers
             var usuario = db.Tratamiento.Single(x => x.nIdTratamiento == tratamientoId);
             ViewBag.Usuario = usuario.usuario.sNombre+ ' ' + usuario.usuario.sApellido;
             ViewBag.tratamientoId = tratamientoId;
-            var imagenTratamiento = db.ImagenTratamiento.Include(i => i.Imagen).Include(i => i.Tratamiento);
+            var imagenTratamiento = db.ImagenTratamiento.Where(x => x.nIdTratamiento == tratamientoId);
+                //var imagenTratamiento = db.ImagenTratamiento.Include(i => i.Imagen).Include(i => i.Tratamiento);
             return View(imagenTratamiento.ToList());
         }
 
@@ -60,7 +61,7 @@ namespace AppergerWeb.Controllers
                 imagenTratamiento.nIdTratamiento = tratamientoId;
                 db.ImagenTratamiento.Add(imagenTratamiento);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { tratamientoId = tratamientoId });
             }
 
             ViewBag.nIdImagen = new SelectList(db.Imagen, "nIdImagen", "sImagen", imagenTratamiento.nIdImagen);
@@ -96,7 +97,7 @@ namespace AppergerWeb.Controllers
             {
                 db.Entry(imagenTratamiento).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { tratamientoId = imagenTratamiento.nIdTratamiento });
             }
             ViewBag.nIdImagen = new SelectList(db.Imagen, "nIdImagen", "sImagen", imagenTratamiento.nIdImagen);
             ViewBag.nIdTratamiento = new SelectList(db.Tratamiento, "nIdTratamiento", "nIdTratamiento", imagenTratamiento.nIdTratamiento);
@@ -128,7 +129,7 @@ namespace AppergerWeb.Controllers
             ImagenTratamiento imagenTratamiento = db.ImagenTratamiento.Find(id);
             db.ImagenTratamiento.Remove(imagenTratamiento);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { tratamientoId = imagenTratamiento.nIdTratamiento });
         }
 
         protected override void Dispose(bool disposing)

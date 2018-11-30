@@ -1,0 +1,46 @@
+﻿@model IEnumerable<AppergerWeb.Models.VideoTratamiento>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Video para tratamiento de @ViewBag.Usuario</h2>
+
+<p>
+    @Html.ActionLink("  Seleccionar Video", "Create", new { tratamientoId = ViewBag.tratamientoId }, new { @class = "fas fa-plus-square" })
+</p>
+<
+<table class="table">
+    <tr>
+        <th>
+            Descripcion
+        </th>
+        <th>Url</th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tratamiento.Categoria)
+        </th>
+        <th>Accion</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Video.sDescripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Video.sVideo) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Video.Categoria.sDescripcion)
+            </td>
+            <td>
+
+
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.nIdVideoTra, tratamientoId = item.nIdTratamiento })
+            </td>
+        </tr>
+    }
+
+</table>

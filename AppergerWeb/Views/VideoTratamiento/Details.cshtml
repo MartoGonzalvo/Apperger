@@ -1,0 +1,35 @@
+﻿@model AppergerWeb.Models.VideoTratamiento
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VideoTratamiento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Video.sVideo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Video.sVideo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tratamiento.nIdTratamiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tratamiento.nIdTratamiento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.nIdVideoTra }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
