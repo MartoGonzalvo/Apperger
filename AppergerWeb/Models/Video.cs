@@ -26,8 +26,10 @@ namespace AppergerWeb.Models
         public Nullable<int> nFin { get; set; }
         public string sDescripcion { get; set; }
         public Nullable<int> nIdCategoria { get; set; }
+        public Nullable<int> nIdEmocion { get; set; }
     
         public virtual Categoria Categoria { get; set; }
+        public virtual Emocion Emocion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VideoTratamiento> VideoTratamiento { get; set; }
     }

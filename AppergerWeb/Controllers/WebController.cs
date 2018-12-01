@@ -12,7 +12,7 @@ namespace AppergerWeb.Controllers
 {
     public class WebController : Controller
     {
-        appergerEntities1 DB = new AppergerWeb.Models.appergerEntities1(); //conexion a la db de la api
+        appergerEntities2 DB = new AppergerWeb.Models.appergerEntities2(); //conexion a la db de la api
 
         // GET: Web
         public ActionResult Index()

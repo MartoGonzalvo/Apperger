@@ -17,7 +17,9 @@ namespace AppergerWeb.Models
         public int nIdImagenTra { get; set; }
         public Nullable<int> nIdTratamiento { get; set; }
         public Nullable<int> nIdImagen { get; set; }
+        public Nullable<int> nIdEmocionElegida { get; set; }
     
+        public virtual Emocion Emocion { get; set; }
         public virtual Imagen Imagen { get; set; }
         public virtual Tratamiento Tratamiento { get; set; }
     }

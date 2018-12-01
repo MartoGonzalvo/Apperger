@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="appergerModel1StoreContainer" CdmEntityContainer="appergerEntities2">
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="appergerModel1.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="nIdCategoria" ColumnName="nIdCategoria" />
+          <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
+          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emocion">
+      <EntityTypeMapping TypeName="appergerModel1.Emocion">
+        <MappingFragment StoreEntitySet="Emocion">
+          <ScalarProperty Name="nIdEmocion" ColumnName="nIdEmocion" />
+          <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Imagen">
+      <EntityTypeMapping TypeName="appergerModel1.Imagen">
+        <MappingFragment StoreEntitySet="Imagen">
+          <ScalarProperty Name="nIdImagen" ColumnName="nIdImagen" />
+          <ScalarProperty Name="sImagen" ColumnName="sImagen" />
+          <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
+          <ScalarProperty Name="nIdCategoria" ColumnName="nIdCategoria" />
+          <ScalarProperty Name="nIdEmocion" ColumnName="nIdEmocion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImagenTratamiento">
+      <EntityTypeMapping TypeName="appergerModel1.ImagenTratamiento">
+        <MappingFragment StoreEntitySet="ImagenTratamiento">
+          <ScalarProperty Name="nIdImagenTra" ColumnName="nIdImagenTra" />
+          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
+          <ScalarProperty Name="nIdImagen" ColumnName="nIdImagen" />
+          <ScalarProperty Name="nIdEmocionElegida" ColumnName="nIdEmocionElegida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="appergerModel1.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="nIdRol" ColumnName="nIdRol" />
+          <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Selfie">
+      <EntityTypeMapping TypeName="appergerModel1.Selfie">
+        <MappingFragment StoreEntitySet="Selfie">
+          <ScalarProperty Name="nIdSelfie" ColumnName="nIdSelfie" />
+          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
+          <ScalarProperty Name="nIdEmocionElegida" ColumnName="nIdEmocionElegida" />
+          <ScalarProperty Name="nIdEmocionRealizada" ColumnName="nIdEmocionRealizada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tratamiento">
+      <EntityTypeMapping TypeName="appergerModel1.Tratamiento">
+        <MappingFragment StoreEntitySet="Tratamiento">
+          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
+          <ScalarProperty Name="dFechaInicio" ColumnName="dFechaInicio" />
+          <ScalarProperty Name="dFechaFin" ColumnName="dFechaFin" />
+          <ScalarProperty Name="bSelfie" ColumnName="bSelfie" />
+          <ScalarProperty Name="bImagen" ColumnName="bImagen" />
+          <ScalarProperty Name="bVideo" ColumnName="bVideo" />
+          <ScalarProperty Name="nIdPsicologo" ColumnName="nIdPsicologo" />
+          <ScalarProperty Name="nIdPaciente" ColumnName="nIdPaciente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="appergerModel1.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="nIdUsuario" ColumnName="nIdUsuario" />
+          <ScalarProperty Name="nRol" ColumnName="nRol" />
+          <ScalarProperty Name="sUsuario" ColumnName="sUsuario" />
+          <ScalarProperty Name="sContraseña" ColumnName="sContraseña" />
+          <ScalarProperty Name="sNombre" ColumnName="sNombre" />
+          <ScalarProperty Name="sApellido" ColumnName="sApellido" />
+          <ScalarProperty Name="nEdad" ColumnName="nEdad" />
+          <ScalarProperty Name="sMatricula" ColumnName="sMatricula" />
+          <ScalarProperty Name="dFechaNacimiento" ColumnName="dFechaNacimiento" />
+          <ScalarProperty Name="sPais" ColumnName="sPais" />
+          <ScalarProperty Name="sProvincia" ColumnName="sProvincia" />
+          <ScalarProperty Name="sCiudad" ColumnName="sCiudad" />
+          <ScalarProperty Name="nPacienteDe" ColumnName="nPacienteDe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Video">
+      <EntityTypeMapping TypeName="appergerModel1.Video">
+        <MappingFragment StoreEntitySet="Video">
+          <ScalarProperty Name="nIdVideo" ColumnName="nIdVideo" />
+          <ScalarProperty Name="sVideo" ColumnName="sVideo" />
+          <ScalarProperty Name="nInicio" ColumnName="nInicio" />
+          <ScalarProperty Name="nFin" ColumnName="nFin" />
+          <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
+          <ScalarProperty Name="nIdCategoria" ColumnName="nIdCategoria" />
+          <ScalarProperty Name="nIdEmocion" ColumnName="nIdEmocion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoTratamiento">
+      <EntityTypeMapping TypeName="appergerModel1.VideoTratamiento">
+        <MappingFragment StoreEntitySet="VideoTratamiento">
+          <ScalarProperty Name="nIdVideoTra" ColumnName="nIdVideoTra" />
+          <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
+          <ScalarProperty Name="nIdVideo" ColumnName="nIdVideo" />
+          <ScalarProperty Name="nIdEmocionElegida" ColumnName="nIdEmocionElegida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

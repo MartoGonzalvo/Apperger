@@ -11,9 +11,7 @@ namespace AppergerWeb.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -27,9 +25,6 @@ namespace AppergerWeb.Models
         public Nullable<int> nRol { get; set; }
         public string sUsuario { get; set; }
         public string sContraseña { get; set; }
-        [Required]
-        [StringLength(20)]
-        [DisplayName("Nombre")]
         public string sNombre { get; set; }
         public string sApellido { get; set; }
         public Nullable<short> nEdad { get; set; }

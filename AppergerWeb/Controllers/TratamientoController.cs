@@ -12,7 +12,7 @@ namespace AppergerWeb.Controllers
 {
     public class TratamientoController : Controller
     {
-        private appergerEntities1 db = new appergerEntities1();
+        private appergerEntities2 db = new appergerEntities2();
 
         // GET: Tratamiento
         public ActionResult Index()

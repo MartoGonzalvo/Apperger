@@ -15,7 +15,7 @@ namespace AppergerWeb.Controllers
 {
     public class VideoController : Controller
     {
-        private appergerEntities1 db = new appergerEntities1();
+        private appergerEntities2 db = new appergerEntities2();
        
         // GET: Video
         public ActionResult Index()
