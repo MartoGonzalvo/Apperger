@@ -54,7 +54,6 @@ C:\Users\HIGGE\source\repos\AppergerWeb\ApiApperger\bin\es\System.Web.Razor.reso
 C:\Users\HIGGE\source\repos\AppergerWeb\ApiApperger\bin\es\System.Web.WebPages.resources.dll
 C:\Users\HIGGE\source\repos\AppergerWeb\ApiApperger\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\HIGGE\source\repos\AppergerWeb\ApiApperger\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\HIGGE\source\repos\AppergerWeb\ApiApperger\obj\Debug\ApiApperger.csprojResolveAssemblyReference.cache
 C:\Users\HIGGE\source\repos\AppergerWeb\ApiApperger\obj\Debug\ApiApperger.csproj.CoreCompileInputs.cache
 C:\Users\HIGGE\source\repos\AppergerWeb\ApiApperger\obj\Debug\ApiApperger.dll
 C:\Users\HIGGE\source\repos\AppergerWeb\ApiApperger\obj\Debug\ApiApperger.pdb
@@ -434,3 +433,7 @@ C:\Users\HIGGE\source\repos\AppergerWeb3\ApiApperger\obj\Debug\ApiApperger.cspro
 C:\Users\HIGGE\source\repos\AppergerWeb3\ApiApperger\obj\Debug\ApiApperger.csproj.CoreCompileInputs.cache
 C:\Users\HIGGE\source\repos\AppergerWeb3\ApiApperger\obj\Debug\ApiApperger.dll
 C:\Users\HIGGE\source\repos\AppergerWeb3\ApiApperger\obj\Debug\ApiApperger.pdb
+C:\Users\HIGGE\source\repos\AppergerWeb\ApiApperger\bin\EntityFramework.SqlServer.dll
+C:\Users\HIGGE\source\repos\AppergerWeb\ApiApperger\bin\EntityFramework.SqlServer.xml
+C:\Users\HIGGE\source\repos\AppergerWeb\ApiApperger\obj\Debug\ApiApperger.csprojAssemblyReference.cache
+C:\Users\HIGGE\source\repos\AppergerWeb\ApiApperger\obj\Debug\ApiApperger.csproj.CopyComplete
