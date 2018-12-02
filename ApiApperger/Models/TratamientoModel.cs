@@ -28,5 +28,7 @@ namespace ApiApperger.Models
         public string provincia { get; set; }
         public string ciudad { get; set; }
         public int nroPaciente { get; set; }
+        public int idEmocion { get; set; }
+        public string sImagen { get; set; }
     }
 }

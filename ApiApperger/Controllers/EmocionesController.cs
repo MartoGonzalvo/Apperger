@@ -15,7 +15,7 @@ namespace ApiApperger.Controllers
         [HttpGet]
         [ActionName("XAMARIN_REG")]
         
-        public HttpResponseMessage Xamarin_reg(int idEmocionElegida, int idEmocion)
+        public HttpResponseMessage Xamarin_reg(int idEmocionElegida, int idEmocion, int idTratamiento)
         {
 
             //usuario usu = new usuario();
@@ -31,7 +31,7 @@ namespace ApiApperger.Controllers
                 try
                 {
 
-                    //self.nIdTratamiento = 1;
+                    self.nIdTratamiento = idTratamiento;
                     self.nIdEmocionElegida = idEmocionElegida;
                     self.nIdEmocionRealizada = idEmocion;
 
