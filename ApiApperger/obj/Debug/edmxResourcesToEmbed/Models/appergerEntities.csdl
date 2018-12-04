@@ -19,6 +19,10 @@
     <Property Name="sDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Selfies" Relationship="Self.FK__Selfie__nIdEmoci__5EBF139D" FromRole="Emocion" ToRole="Selfie" />
     <NavigationProperty Name="Selfies1" Relationship="Self.FK__Selfie__nIdEmoci__5FB337D6" FromRole="Emocion" ToRole="Selfie" />
+    <NavigationProperty Name="Imagens" Relationship="appergerModel.FK__Imagen__nIdEmoci__6EF57B66" FromRole="Emocion" ToRole="Imagen" />
+    <NavigationProperty Name="ImagenTratamientoes" Relationship="appergerModel.FK__ImagenTra__nIdEm__6FE99F9F" FromRole="Emocion" ToRole="ImagenTratamiento" />
+    <NavigationProperty Name="Videos" Relationship="appergerModel.FK__Video__nIdEmocio__6E01572D" FromRole="Emocion" ToRole="Video" />
+    <NavigationProperty Name="VideoTratamientoes" Relationship="appergerModel.FK__VideoTrat__nIdEm__70DDC3D8" FromRole="Emocion" ToRole="VideoTratamiento" />
   </EntityType>
   <EntityType Name="Imagen">
     <Key>
@@ -30,6 +34,8 @@
     <Property Name="nIdCategoria" Type="Int32" />
     <NavigationProperty Name="Categoria" Relationship="Self.FK__Imagen__nIdCateg__628FA481" FromRole="Imagen" ToRole="Categoria" />
     <NavigationProperty Name="ImagenTratamientoes" Relationship="Self.FK__ImagenTra__nIdIm__66603565" FromRole="Imagen" ToRole="ImagenTratamiento" />
+    <Property Name="nIdEmocion" Type="Int32" />
+    <NavigationProperty Name="Emocion" Relationship="appergerModel.FK__Imagen__nIdEmoci__6EF57B66" FromRole="Imagen" ToRole="Emocion" />
   </EntityType>
   <EntityType Name="ImagenTratamiento">
     <Key>
@@ -40,6 +46,8 @@
     <Property Name="nIdImagen" Type="Int32" />
     <NavigationProperty Name="Imagen" Relationship="Self.FK__ImagenTra__nIdIm__66603565" FromRole="ImagenTratamiento" ToRole="Imagen" />
     <NavigationProperty Name="Tratamiento" Relationship="Self.FK__ImagenTra__nIdTr__656C112C" FromRole="ImagenTratamiento" ToRole="Tratamiento" />
+    <Property Name="nIdEmocionElegida" Type="Int32" />
+    <NavigationProperty Name="Emocion" Relationship="appergerModel.FK__ImagenTra__nIdEm__6FE99F9F" FromRole="ImagenTratamiento" ToRole="Emocion" />
   </EntityType>
   <EntityType Name="Rol">
     <Key>
@@ -113,6 +121,8 @@
     <Property Name="nIdCategoria" Type="Int32" />
     <NavigationProperty Name="Categoria" Relationship="Self.FK__Video__nIdCatego__571DF1D5" FromRole="Video" ToRole="Categoria" />
     <NavigationProperty Name="VideoTratamientoes" Relationship="Self.FK__VideoTrat__nIdVi__5AEE82B9" FromRole="Video" ToRole="VideoTratamiento" />
+    <Property Name="nIdEmocion" Type="Int32" />
+    <NavigationProperty Name="Emocion" Relationship="appergerModel.FK__Video__nIdEmocio__6E01572D" FromRole="Video" ToRole="Emocion" />
   </EntityType>
   <EntityType Name="VideoTratamiento">
     <Key>
@@ -123,6 +133,8 @@
     <Property Name="nIdVideo" Type="Int32" />
     <NavigationProperty Name="Tratamiento" Relationship="Self.FK__VideoTrat__nIdTr__59FA5E80" FromRole="VideoTratamiento" ToRole="Tratamiento" />
     <NavigationProperty Name="Video" Relationship="Self.FK__VideoTrat__nIdVi__5AEE82B9" FromRole="VideoTratamiento" ToRole="Video" />
+    <Property Name="nIdEmocionElegida" Type="Int32" />
+    <NavigationProperty Name="Emocion" Relationship="appergerModel.FK__VideoTrat__nIdEm__70DDC3D8" FromRole="VideoTratamiento" ToRole="Emocion" />
   </EntityType>
   <EntityType Name="database_firewall_rules">
     <Key>
@@ -360,5 +372,69 @@
       <End Role="Video" EntitySet="Videos" />
       <End Role="VideoTratamiento" EntitySet="VideoTratamientoes" />
     </AssociationSet>
+    <AssociationSet Name="FK__Imagen__nIdEmoci__6EF57B66" Association="appergerModel.FK__Imagen__nIdEmoci__6EF57B66">
+      <End Role="Emocion" EntitySet="Emocions" />
+      <End Role="Imagen" EntitySet="Imagens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ImagenTra__nIdEm__6FE99F9F" Association="appergerModel.FK__ImagenTra__nIdEm__6FE99F9F">
+      <End Role="Emocion" EntitySet="Emocions" />
+      <End Role="ImagenTratamiento" EntitySet="ImagenTratamientoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Video__nIdEmocio__6E01572D" Association="appergerModel.FK__Video__nIdEmocio__6E01572D">
+      <End Role="Emocion" EntitySet="Emocions" />
+      <End Role="Video" EntitySet="Videos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VideoTrat__nIdEm__70DDC3D8" Association="appergerModel.FK__VideoTrat__nIdEm__70DDC3D8">
+      <End Role="Emocion" EntitySet="Emocions" />
+      <End Role="VideoTratamiento" EntitySet="VideoTratamientoes" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK__Imagen__nIdEmoci__6EF57B66">
+    <End Type="appergerModel.Emocion" Role="Emocion" Multiplicity="0..1" />
+    <End Type="appergerModel.Imagen" Role="Imagen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emocion">
+        <PropertyRef Name="nIdEmocion" />
+      </Principal>
+      <Dependent Role="Imagen">
+        <PropertyRef Name="nIdEmocion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ImagenTra__nIdEm__6FE99F9F">
+    <End Type="appergerModel.Emocion" Role="Emocion" Multiplicity="0..1" />
+    <End Type="appergerModel.ImagenTratamiento" Role="ImagenTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emocion">
+        <PropertyRef Name="nIdEmocion" />
+      </Principal>
+      <Dependent Role="ImagenTratamiento">
+        <PropertyRef Name="nIdEmocionElegida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Video__nIdEmocio__6E01572D">
+    <End Type="appergerModel.Emocion" Role="Emocion" Multiplicity="0..1" />
+    <End Type="appergerModel.Video" Role="Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emocion">
+        <PropertyRef Name="nIdEmocion" />
+      </Principal>
+      <Dependent Role="Video">
+        <PropertyRef Name="nIdEmocion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VideoTrat__nIdEm__70DDC3D8">
+    <End Type="appergerModel.Emocion" Role="Emocion" Multiplicity="0..1" />
+    <End Type="appergerModel.VideoTratamiento" Role="VideoTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emocion">
+        <PropertyRef Name="nIdEmocion" />
+      </Principal>
+      <Dependent Role="VideoTratamiento">
+        <PropertyRef Name="nIdEmocionElegida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

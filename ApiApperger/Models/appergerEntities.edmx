@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="appergerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="appergerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="nIdCategoria" />
@@ -28,6 +28,7 @@
           <Property Name="sImagen" Type="varchar" MaxLength="250" />
           <Property Name="sDescripcion" Type="varchar" MaxLength="150" />
           <Property Name="nIdCategoria" Type="int" />
+          <Property Name="nIdEmocion" Type="int" />
         </EntityType>
         <EntityType Name="ImagenTratamiento">
           <Key>
@@ -36,6 +37,7 @@
           <Property Name="nIdImagenTra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nIdTratamiento" Type="int" />
           <Property Name="nIdImagen" Type="int" />
+          <Property Name="nIdEmocionElegida" Type="int" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -94,6 +96,7 @@
           <Property Name="nFin" Type="int" />
           <Property Name="sDescripcion" Type="varchar" MaxLength="150" />
           <Property Name="nIdCategoria" Type="int" />
+          <Property Name="nIdEmocion" Type="int" />
         </EntityType>
         <EntityType Name="VideoTratamiento">
           <Key>
@@ -102,6 +105,7 @@
           <Property Name="nIdVideoTra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nIdTratamiento" Type="int" />
           <Property Name="nIdVideo" Type="int" />
+          <Property Name="nIdEmocionElegida" Type="int" />
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -142,6 +146,30 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
             </Principal>
             <Dependent Role="Imagen">
               <PropertyRef Name="nIdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Imagen__nIdEmoci__6EF57B66">
+          <End Role="Emocion" Type="Self.Emocion" Multiplicity="0..1" />
+          <End Role="Imagen" Type="Self.Imagen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emocion">
+              <PropertyRef Name="nIdEmocion" />
+            </Principal>
+            <Dependent Role="Imagen">
+              <PropertyRef Name="nIdEmocion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ImagenTra__nIdEm__6FE99F9F">
+          <End Role="Emocion" Type="Self.Emocion" Multiplicity="0..1" />
+          <End Role="ImagenTratamiento" Type="Self.ImagenTratamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emocion">
+              <PropertyRef Name="nIdEmocion" />
+            </Principal>
+            <Dependent Role="ImagenTratamiento">
+              <PropertyRef Name="nIdEmocionElegida" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -253,6 +281,30 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Video__nIdEmocio__6E01572D">
+          <End Role="Emocion" Type="Self.Emocion" Multiplicity="0..1" />
+          <End Role="Video" Type="Self.Video" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emocion">
+              <PropertyRef Name="nIdEmocion" />
+            </Principal>
+            <Dependent Role="Video">
+              <PropertyRef Name="nIdEmocion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VideoTrat__nIdEm__70DDC3D8">
+          <End Role="Emocion" Type="Self.Emocion" Multiplicity="0..1" />
+          <End Role="VideoTratamiento" Type="Self.VideoTratamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emocion">
+              <PropertyRef Name="nIdEmocion" />
+            </Principal>
+            <Dependent Role="VideoTratamiento">
+              <PropertyRef Name="nIdEmocionElegida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__VideoTrat__nIdTr__59FA5E80">
           <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="0..1" />
           <End Role="VideoTratamiento" Type="Self.VideoTratamiento" Multiplicity="*" />
@@ -306,6 +358,14 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Imagen" EntitySet="Imagen" />
           </AssociationSet>
+          <AssociationSet Name="FK__Imagen__nIdEmoci__6EF57B66" Association="Self.FK__Imagen__nIdEmoci__6EF57B66">
+            <End Role="Emocion" EntitySet="Emocion" />
+            <End Role="Imagen" EntitySet="Imagen" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ImagenTra__nIdEm__6FE99F9F" Association="Self.FK__ImagenTra__nIdEm__6FE99F9F">
+            <End Role="Emocion" EntitySet="Emocion" />
+            <End Role="ImagenTratamiento" EntitySet="ImagenTratamiento" />
+          </AssociationSet>
           <AssociationSet Name="FK__ImagenTra__nIdIm__66603565" Association="Self.FK__ImagenTra__nIdIm__66603565">
             <End Role="Imagen" EntitySet="Imagen" />
             <End Role="ImagenTratamiento" EntitySet="ImagenTratamiento" />
@@ -342,6 +402,14 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Video" EntitySet="Video" />
           </AssociationSet>
+          <AssociationSet Name="FK__Video__nIdEmocio__6E01572D" Association="Self.FK__Video__nIdEmocio__6E01572D">
+            <End Role="Emocion" EntitySet="Emocion" />
+            <End Role="Video" EntitySet="Video" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VideoTrat__nIdEm__70DDC3D8" Association="Self.FK__VideoTrat__nIdEm__70DDC3D8">
+            <End Role="Emocion" EntitySet="Emocion" />
+            <End Role="VideoTratamiento" EntitySet="VideoTratamiento" />
+          </AssociationSet>
           <AssociationSet Name="FK__VideoTrat__nIdTr__59FA5E80" Association="Self.FK__VideoTrat__nIdTr__59FA5E80">
             <End Role="Tratamiento" EntitySet="Tratamiento" />
             <End Role="VideoTratamiento" EntitySet="VideoTratamiento" />
@@ -351,8 +419,7 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
             <End Role="VideoTratamiento" EntitySet="VideoTratamiento" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="appergerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -375,6 +442,10 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
           <Property Name="sDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Selfies" Relationship="Self.FK__Selfie__nIdEmoci__5EBF139D" FromRole="Emocion" ToRole="Selfie" />
           <NavigationProperty Name="Selfies1" Relationship="Self.FK__Selfie__nIdEmoci__5FB337D6" FromRole="Emocion" ToRole="Selfie" />
+          <NavigationProperty Name="Imagens" Relationship="appergerModel.FK__Imagen__nIdEmoci__6EF57B66" FromRole="Emocion" ToRole="Imagen" />
+          <NavigationProperty Name="ImagenTratamientoes" Relationship="appergerModel.FK__ImagenTra__nIdEm__6FE99F9F" FromRole="Emocion" ToRole="ImagenTratamiento" />
+          <NavigationProperty Name="Videos" Relationship="appergerModel.FK__Video__nIdEmocio__6E01572D" FromRole="Emocion" ToRole="Video" />
+          <NavigationProperty Name="VideoTratamientoes" Relationship="appergerModel.FK__VideoTrat__nIdEm__70DDC3D8" FromRole="Emocion" ToRole="VideoTratamiento" />
         </EntityType>
         <EntityType Name="Imagen">
           <Key>
@@ -386,6 +457,8 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
           <Property Name="nIdCategoria" Type="Int32" />
           <NavigationProperty Name="Categoria" Relationship="Self.FK__Imagen__nIdCateg__628FA481" FromRole="Imagen" ToRole="Categoria" />
           <NavigationProperty Name="ImagenTratamientoes" Relationship="Self.FK__ImagenTra__nIdIm__66603565" FromRole="Imagen" ToRole="ImagenTratamiento" />
+          <Property Name="nIdEmocion" Type="Int32" />
+          <NavigationProperty Name="Emocion" Relationship="appergerModel.FK__Imagen__nIdEmoci__6EF57B66" FromRole="Imagen" ToRole="Emocion" />
         </EntityType>
         <EntityType Name="ImagenTratamiento">
           <Key>
@@ -396,6 +469,8 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
           <Property Name="nIdImagen" Type="Int32" />
           <NavigationProperty Name="Imagen" Relationship="Self.FK__ImagenTra__nIdIm__66603565" FromRole="ImagenTratamiento" ToRole="Imagen" />
           <NavigationProperty Name="Tratamiento" Relationship="Self.FK__ImagenTra__nIdTr__656C112C" FromRole="ImagenTratamiento" ToRole="Tratamiento" />
+          <Property Name="nIdEmocionElegida" Type="Int32" />
+          <NavigationProperty Name="Emocion" Relationship="appergerModel.FK__ImagenTra__nIdEm__6FE99F9F" FromRole="ImagenTratamiento" ToRole="Emocion" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -469,6 +544,8 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
           <Property Name="nIdCategoria" Type="Int32" />
           <NavigationProperty Name="Categoria" Relationship="Self.FK__Video__nIdCatego__571DF1D5" FromRole="Video" ToRole="Categoria" />
           <NavigationProperty Name="VideoTratamientoes" Relationship="Self.FK__VideoTrat__nIdVi__5AEE82B9" FromRole="Video" ToRole="VideoTratamiento" />
+          <Property Name="nIdEmocion" Type="Int32" />
+          <NavigationProperty Name="Emocion" Relationship="appergerModel.FK__Video__nIdEmocio__6E01572D" FromRole="Video" ToRole="Emocion" />
         </EntityType>
         <EntityType Name="VideoTratamiento">
           <Key>
@@ -479,6 +556,8 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
           <Property Name="nIdVideo" Type="Int32" />
           <NavigationProperty Name="Tratamiento" Relationship="Self.FK__VideoTrat__nIdTr__59FA5E80" FromRole="VideoTratamiento" ToRole="Tratamiento" />
           <NavigationProperty Name="Video" Relationship="Self.FK__VideoTrat__nIdVi__5AEE82B9" FromRole="VideoTratamiento" ToRole="Video" />
+          <Property Name="nIdEmocionElegida" Type="Int32" />
+          <NavigationProperty Name="Emocion" Relationship="appergerModel.FK__VideoTrat__nIdEm__70DDC3D8" FromRole="VideoTratamiento" ToRole="Emocion" />
         </EntityType>
         <EntityType Name="database_firewall_rules">
           <Key>
@@ -716,7 +795,71 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
             <End Role="Video" EntitySet="Videos" />
             <End Role="VideoTratamiento" EntitySet="VideoTratamientoes" />
           </AssociationSet>
+          <AssociationSet Name="FK__Imagen__nIdEmoci__6EF57B66" Association="appergerModel.FK__Imagen__nIdEmoci__6EF57B66">
+            <End Role="Emocion" EntitySet="Emocions" />
+            <End Role="Imagen" EntitySet="Imagens" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ImagenTra__nIdEm__6FE99F9F" Association="appergerModel.FK__ImagenTra__nIdEm__6FE99F9F">
+            <End Role="Emocion" EntitySet="Emocions" />
+            <End Role="ImagenTratamiento" EntitySet="ImagenTratamientoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Video__nIdEmocio__6E01572D" Association="appergerModel.FK__Video__nIdEmocio__6E01572D">
+            <End Role="Emocion" EntitySet="Emocions" />
+            <End Role="Video" EntitySet="Videos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VideoTrat__nIdEm__70DDC3D8" Association="appergerModel.FK__VideoTrat__nIdEm__70DDC3D8">
+            <End Role="Emocion" EntitySet="Emocions" />
+            <End Role="VideoTratamiento" EntitySet="VideoTratamientoes" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK__Imagen__nIdEmoci__6EF57B66">
+          <End Type="appergerModel.Emocion" Role="Emocion" Multiplicity="0..1" />
+          <End Type="appergerModel.Imagen" Role="Imagen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emocion">
+              <PropertyRef Name="nIdEmocion" />
+            </Principal>
+            <Dependent Role="Imagen">
+              <PropertyRef Name="nIdEmocion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ImagenTra__nIdEm__6FE99F9F">
+          <End Type="appergerModel.Emocion" Role="Emocion" Multiplicity="0..1" />
+          <End Type="appergerModel.ImagenTratamiento" Role="ImagenTratamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emocion">
+              <PropertyRef Name="nIdEmocion" />
+            </Principal>
+            <Dependent Role="ImagenTratamiento">
+              <PropertyRef Name="nIdEmocionElegida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Video__nIdEmocio__6E01572D">
+          <End Type="appergerModel.Emocion" Role="Emocion" Multiplicity="0..1" />
+          <End Type="appergerModel.Video" Role="Video" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emocion">
+              <PropertyRef Name="nIdEmocion" />
+            </Principal>
+            <Dependent Role="Video">
+              <PropertyRef Name="nIdEmocion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VideoTrat__nIdEm__70DDC3D8">
+          <End Type="appergerModel.Emocion" Role="Emocion" Multiplicity="0..1" />
+          <End Type="appergerModel.VideoTratamiento" Role="VideoTratamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Emocion">
+              <PropertyRef Name="nIdEmocion" />
+            </Principal>
+            <Dependent Role="VideoTratamiento">
+              <PropertyRef Name="nIdEmocionElegida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -743,6 +886,7 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
           <EntitySetMapping Name="Imagens">
             <EntityTypeMapping TypeName="appergerModel.Imagen">
               <MappingFragment StoreEntitySet="Imagen">
+                <ScalarProperty Name="nIdEmocion" ColumnName="nIdEmocion" />
                 <ScalarProperty Name="nIdImagen" ColumnName="nIdImagen" />
                 <ScalarProperty Name="sImagen" ColumnName="sImagen" />
                 <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
@@ -753,6 +897,7 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
           <EntitySetMapping Name="ImagenTratamientoes">
             <EntityTypeMapping TypeName="appergerModel.ImagenTratamiento">
               <MappingFragment StoreEntitySet="ImagenTratamiento">
+                <ScalarProperty Name="nIdEmocionElegida" ColumnName="nIdEmocionElegida" />
                 <ScalarProperty Name="nIdImagenTra" ColumnName="nIdImagenTra" />
                 <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
                 <ScalarProperty Name="nIdImagen" ColumnName="nIdImagen" />
@@ -813,6 +958,7 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
           <EntitySetMapping Name="Videos">
             <EntityTypeMapping TypeName="appergerModel.Video">
               <MappingFragment StoreEntitySet="Video">
+                <ScalarProperty Name="nIdEmocion" ColumnName="nIdEmocion" />
                 <ScalarProperty Name="nIdVideo" ColumnName="nIdVideo" />
                 <ScalarProperty Name="sVideo" ColumnName="sVideo" />
                 <ScalarProperty Name="nInicio" ColumnName="nInicio" />
@@ -825,6 +971,7 @@ advertencia 6002: La tabla o vista 'apperger.sys.database_firewall_rules' no tie
           <EntitySetMapping Name="VideoTratamientoes">
             <EntityTypeMapping TypeName="appergerModel.VideoTratamiento">
               <MappingFragment StoreEntitySet="VideoTratamiento">
+                <ScalarProperty Name="nIdEmocionElegida" ColumnName="nIdEmocionElegida" />
                 <ScalarProperty Name="nIdVideoTra" ColumnName="nIdVideoTra" />
                 <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
                 <ScalarProperty Name="nIdVideo" ColumnName="nIdVideo" />

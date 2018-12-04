@@ -21,6 +21,7 @@
     <EntitySetMapping Name="Imagens">
       <EntityTypeMapping TypeName="appergerModel.Imagen">
         <MappingFragment StoreEntitySet="Imagen">
+          <ScalarProperty Name="nIdEmocion" ColumnName="nIdEmocion" />
           <ScalarProperty Name="nIdImagen" ColumnName="nIdImagen" />
           <ScalarProperty Name="sImagen" ColumnName="sImagen" />
           <ScalarProperty Name="sDescripcion" ColumnName="sDescripcion" />
@@ -31,6 +32,7 @@
     <EntitySetMapping Name="ImagenTratamientoes">
       <EntityTypeMapping TypeName="appergerModel.ImagenTratamiento">
         <MappingFragment StoreEntitySet="ImagenTratamiento">
+          <ScalarProperty Name="nIdEmocionElegida" ColumnName="nIdEmocionElegida" />
           <ScalarProperty Name="nIdImagenTra" ColumnName="nIdImagenTra" />
           <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
           <ScalarProperty Name="nIdImagen" ColumnName="nIdImagen" />
@@ -91,6 +93,7 @@
     <EntitySetMapping Name="Videos">
       <EntityTypeMapping TypeName="appergerModel.Video">
         <MappingFragment StoreEntitySet="Video">
+          <ScalarProperty Name="nIdEmocion" ColumnName="nIdEmocion" />
           <ScalarProperty Name="nIdVideo" ColumnName="nIdVideo" />
           <ScalarProperty Name="sVideo" ColumnName="sVideo" />
           <ScalarProperty Name="nInicio" ColumnName="nInicio" />
@@ -103,6 +106,7 @@
     <EntitySetMapping Name="VideoTratamientoes">
       <EntityTypeMapping TypeName="appergerModel.VideoTratamiento">
         <MappingFragment StoreEntitySet="VideoTratamiento">
+          <ScalarProperty Name="nIdEmocionElegida" ColumnName="nIdEmocionElegida" />
           <ScalarProperty Name="nIdVideoTra" ColumnName="nIdVideoTra" />
           <ScalarProperty Name="nIdTratamiento" ColumnName="nIdTratamiento" />
           <ScalarProperty Name="nIdVideo" ColumnName="nIdVideo" />

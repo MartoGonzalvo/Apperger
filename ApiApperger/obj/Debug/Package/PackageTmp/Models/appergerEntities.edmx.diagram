@@ -29,6 +29,10 @@
         <AssociationConnector Association="appergerModel.FK__Tratamien__nIdPs__4E88ABD4" ManuallyRouted="false" />
         <AssociationConnector Association="appergerModel.FK__VideoTrat__nIdTr__59FA5E80" ManuallyRouted="false" />
         <AssociationConnector Association="appergerModel.FK__VideoTrat__nIdVi__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="appergerModel.FK__Imagen__nIdEmoci__6EF57B66" />
+        <AssociationConnector Association="appergerModel.FK__ImagenTra__nIdEm__6FE99F9F" />
+        <AssociationConnector Association="appergerModel.FK__Video__nIdEmocio__6E01572D" />
+        <AssociationConnector Association="appergerModel.FK__VideoTrat__nIdEm__70DDC3D8" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

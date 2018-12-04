@@ -19,6 +19,10 @@ namespace ApiApperger.Models
         {
             this.Selfies = new HashSet<Selfie>();
             this.Selfies1 = new HashSet<Selfie>();
+            this.Imagens = new HashSet<Imagen>();
+            this.ImagenTratamientoes = new HashSet<ImagenTratamiento>();
+            this.Videos = new HashSet<Video>();
+            this.VideoTratamientoes = new HashSet<VideoTratamiento>();
         }
     
         public int nIdEmocion { get; set; }
@@ -28,5 +32,13 @@ namespace ApiApperger.Models
         public virtual ICollection<Selfie> Selfies { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Selfie> Selfies1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Imagen> Imagens { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ImagenTratamiento> ImagenTratamientoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Video> Videos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VideoTratamiento> VideoTratamientoes { get; set; }
     }
 }

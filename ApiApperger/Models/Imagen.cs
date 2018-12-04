@@ -24,9 +24,11 @@ namespace ApiApperger.Models
         public string sImagen { get; set; }
         public string sDescripcion { get; set; }
         public Nullable<int> nIdCategoria { get; set; }
+        public Nullable<int> nIdEmocion { get; set; }
     
         public virtual Categoria Categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ImagenTratamiento> ImagenTratamientoes { get; set; }
+        public virtual Emocion Emocion { get; set; }
     }
 }

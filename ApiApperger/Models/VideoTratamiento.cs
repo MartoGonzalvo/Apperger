@@ -17,8 +17,10 @@ namespace ApiApperger.Models
         public int nIdVideoTra { get; set; }
         public Nullable<int> nIdTratamiento { get; set; }
         public Nullable<int> nIdVideo { get; set; }
+        public Nullable<int> nIdEmocionElegida { get; set; }
     
         public virtual Tratamiento Tratamiento { get; set; }
         public virtual Video Video { get; set; }
+        public virtual Emocion Emocion { get; set; }
     }
 }
