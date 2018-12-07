@@ -30,7 +30,7 @@
             @Html.EditorFor(model => model.nInicio, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.nInicio, "", new { @class = "text-danger" })
         </div>
-    </div> 
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.nFin, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -51,6 +51,13 @@
         <div class="col-md-10">
             @Html.DropDownList("nIdCategoria", null, htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.nIdCategoria, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.nIdEmocion, "nIdEmocion", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("nIdEmocion", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.nIdEmocion, "", new { @class = "text-danger" })
         </div>
     </div>
 

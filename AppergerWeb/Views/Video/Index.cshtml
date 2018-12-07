@@ -22,12 +22,7 @@
         <th>
             @Html.DisplayNameFor(model => model.sVideo)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nInicio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nFin)
-        </th>
+        
         <th></th>
     </tr>
 
@@ -44,12 +39,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.sVideo)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nFin)
-        </td>
+      
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.nIdVideo }) |
             @Html.ActionLink("Details", "Details", new { id = item.nIdVideo }) |

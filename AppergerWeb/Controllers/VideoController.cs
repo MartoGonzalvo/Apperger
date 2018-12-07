@@ -44,6 +44,7 @@ namespace AppergerWeb.Controllers
         {
 
             ViewBag.nIdCategoria = new SelectList(db.Categoria, "nIdCategoria", "sDescripcion");
+            ViewBag.nIdEmocion = new SelectList(db.Emocion, "nIdEmocion", "sDescripcion");
             return View();
         }
 
@@ -52,19 +53,21 @@ namespace AppergerWeb.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "nIdVideo,sVideo,nInicio,nFin,sDescripcion,nIdCategoria")] Video video)
+        public ActionResult Create([Bind(Include = "nIdVideo,sVideo,nInicio,nFin,sDescripcion,nIdCategoria,nIdEmocion")] Video video)
         {
             
                 if (ModelState.IsValid)
                 {
-
-                   
+                //?start=235&end=240
+                var link = video.sVideo+ "?start="+video.nInicio+ "&end="+video.nFin;
+                video.sVideo = link;
                     db.Video.Add(video);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
             
             ViewBag.nIdCategoria = new SelectList(db.Categoria, "nIdCategoria", "sDescripcion", video.nIdCategoria);
+            ViewBag.nIdEmocion = new SelectList(db.Emocion, "nIdEmocion", "sDescripcion", video.nIdEmocion);
             return View(video);
         }
 
@@ -81,6 +84,7 @@ namespace AppergerWeb.Controllers
                 return HttpNotFound();
             }
             ViewBag.nIdCategoria = new SelectList(db.Categoria, "nIdCategoria", "sDescripcion", video.nIdCategoria);
+            ViewBag.nIdEmocion = new SelectList(db.Emocion, "nIdEmocion", "sDescripcion", video.nIdEmocion);
             return View(video);
         }
 
@@ -93,11 +97,14 @@ namespace AppergerWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                var link = video.sVideo + "?start=" + video.nInicio + "&end=" + video.nFin;
+                video.sVideo = link;
                 db.Entry(video).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.nIdCategoria = new SelectList(db.Categoria, "nIdCategoria", "sDescripcion", video.nIdCategoria);
+            ViewBag.nIdEmocion = new SelectList(db.Emocion, "nIdEmocion", "sDescripcion", video.nIdEmocion);
             return View(video);
         }
 

@@ -44,6 +44,7 @@ namespace AppergerWeb.Controllers
         {
            
             ViewBag.nIdCategoria = new SelectList(db.Categoria, "nIdCategoria", "sDescripcion");
+            ViewBag.nIdEmocion = new SelectList(db.Emocion, "nIdEmocion", "sDescripcion");
             return View();
         }
 
@@ -52,7 +53,7 @@ namespace AppergerWeb.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "nIdImagen,sImagen,sDescripcion,nIdCategoria")] Imagen imagen)
+        public ActionResult Create([Bind(Include = "nIdImagen,sImagen,sDescripcion,nIdCategoria,nIdEmocion")] Imagen imagen)
         {
             var file = Request.Files[0];
             if (file != null && file.ContentLength > 0)
@@ -76,6 +77,7 @@ namespace AppergerWeb.Controllers
             }
             }
             ViewBag.nIdCategoria = new SelectList(db.Categoria, "nIdCategoria", "sDescripcion", imagen.nIdCategoria);
+            ViewBag.nIdEmocion = new SelectList(db.Emocion, "nIdEmocion", "sDescripcion", imagen.nIdEmocion);
             return View(imagen);
         }
 
@@ -92,6 +94,8 @@ namespace AppergerWeb.Controllers
                 return HttpNotFound();
             }
             ViewBag.nIdCategoria = new SelectList(db.Categoria, "nIdCategoria", "sDescripcion", imagen.nIdCategoria);
+            ViewBag.nIdEmocion = new SelectList(db.Emocion, "nIdEmocion", "sDescripcion", imagen.nIdEmocion);
+
             return View(imagen);
         }
 
@@ -100,7 +104,7 @@ namespace AppergerWeb.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "nIdImagen,sImagen,sDescripcion,nIdCategoria")] Imagen imagen)
+        public ActionResult Edit([Bind(Include = "nIdImagen,sImagen,sDescripcion,nIdCategoria,nIdEmocion")] Imagen imagen)
         {
             if (ModelState.IsValid)
             {
@@ -109,6 +113,8 @@ namespace AppergerWeb.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.nIdCategoria = new SelectList(db.Categoria, "nIdCategoria", "sDescripcion", imagen.nIdCategoria);
+            ViewBag.nIdEmocion = new SelectList(db.Emocion, "nIdEmocion", "sDescripcion", imagen.nIdEmocion);
+
             return View(imagen);
         }
 

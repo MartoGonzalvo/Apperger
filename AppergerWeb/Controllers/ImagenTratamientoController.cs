@@ -20,7 +20,7 @@ namespace AppergerWeb.Controllers
             var usuario = db.Tratamiento.Single(x => x.nIdTratamiento == tratamientoId);
             ViewBag.Usuario = usuario.usuario.sNombre+ ' ' + usuario.usuario.sApellido;
             ViewBag.tratamientoId = tratamientoId;
-            var imagenTratamiento = db.ImagenTratamiento.Include(i => i.Imagen).Include(i => i.Tratamiento);
+            var imagenTratamiento = db.ImagenTratamiento.Where(x => x.nIdTratamiento == tratamientoId);
             return View(imagenTratamiento.ToList());
         }
 

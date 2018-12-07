@@ -179,6 +179,7 @@
     <Compile Include="Controllers\ImagenTratamientoController.cs" />
     <Compile Include="Controllers\TratamientoController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
+    <Compile Include="Controllers\VideoTratamientoController.cs" />
     <Compile Include="Controllers\WebController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -923,6 +924,11 @@
     <Content Include="Views\ImagenTratamiento\Details.cshtml" />
     <Content Include="Views\ImagenTratamiento\Edit.cshtml" />
     <Content Include="Views\ImagenTratamiento\Index.cshtml" />
+    <Content Include="Views\VideoTratamiento\Index.cshtml" />
+    <Content Include="Views\VideoTratamiento\Details.cshtml" />
+    <Content Include="Views\VideoTratamiento\Create.cshtml" />
+    <Content Include="Views\VideoTratamiento\Edit.cshtml" />
+    <Content Include="Views\VideoTratamiento\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiApperger\ApiApperger.csproj">
