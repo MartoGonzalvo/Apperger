@@ -42,7 +42,7 @@ namespace ApiApperger.Controllers
                 }
                 catch(Exception ex)
                 {
-                    return Request.CreateResponse(HttpStatusCode.Unauthorized, "Error amigo");
+                    return Request.CreateResponse(HttpStatusCode.Unauthorized, "Error");
                 }
                 
             }

@@ -20,10 +20,10 @@ namespace ApiApperger.Controllers
 
 
             var listaDeVideos = (from tratamiento in DB.Tratamientoes
-                                   join videoTratamiento in DB.VideoTratamientoes on tratamiento.nIdTratamiento equals videoTratamiento.nIdTratamiento
-                                   join video in DB.Videos on videoTratamiento.nIdVideo equals video.nIdVideo
-                                   where tratamiento.nIdPaciente == idUsuario
-                                   select new TratamientoModel { sVideo = video.sVideo/*, idEmocion = video.nIdEmocion.Value*/, nidVideo = videoTratamiento.nIdVideo.Value }).ToList();
+                                 join videoTratamiento in DB.VideoTratamientoes on tratamiento.nIdTratamiento equals videoTratamiento.nIdTratamiento
+                                 join video in DB.Videos on videoTratamiento.nIdVideo equals video.nIdVideo
+                                 where tratamiento.nIdPaciente == idUsuario
+                                 select new TratamientoModel { sVideo = video.sVideo/*, idEmocion = video.nIdEmocion.Value*/, nidVideo = videoTratamiento.nIdVideo.Value }).ToList();
 
 
             /*foreach (var lista in listaDeImagenes)
