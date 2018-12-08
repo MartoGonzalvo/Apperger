@@ -19,7 +19,7 @@ namespace ApiApperger.Controllers
         {
             //var user = DB.usuarios.Where(x => x.sUsuario == username && x.sContraseña == password).FirstOrDefault();
 
-            var query = DB.usuarios.Join(DB.Tratamientoes, x => x.nIdUsuario, y => y.nIdPaciente, (x, y) => new { x.nIdUsuario, x.sUsuario, y.bSelfie, y.bImagen, y.bVideo, y.nIdTratamiento }).Where(usrName => usrName.sUsuario == username);
+            var query = DB.usuarios.Join(DB.Tratamientoes, x => x.nIdUsuario, y => y.nIdPaciente, (x, y) => new { x.nIdUsuario, x.sNombre, x.sUsuario, y.bSelfie, y.bImagen, y.bVideo, y.nIdTratamiento }).Where(usrName => usrName.sUsuario == username);
             List<TratamientoModel> listaTratamiento = new List<TratamientoModel>();
             TratamientoModel tratamientoUsuario = new TratamientoModel();
             foreach (var lista in query)
@@ -29,6 +29,7 @@ namespace ApiApperger.Controllers
                 tratamientoUsuario.selfie = Convert.ToBoolean(lista.bSelfie);
                 tratamientoUsuario.video = Convert.ToBoolean(lista.bVideo);
                 tratamientoUsuario.imagen = Convert.ToBoolean(lista.bImagen);
+                tratamientoUsuario.nombre = lista.sNombre;
                 listaTratamiento.Add(tratamientoUsuario);
             }
 

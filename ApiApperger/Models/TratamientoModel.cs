@@ -31,5 +31,8 @@ namespace ApiApperger.Models
         public int nroPaciente { get; set; }
         public int idEmocion { get; set; }
         public string sImagen { get; set; }
+        public string sVideo { get; set; }
+        public int nidVideo { get; set; }
+
     }
 }
