@@ -186,10 +186,12 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\DatosUsuarioController.cs" />
     <Compile Include="Controllers\EmocionesController.cs" />
-    <Compile Include="Controllers\ImagenenesPorUsuarioController.cs" />
+    <Compile Include="Controllers\ImagenesPorUsuarioController.cs" />
     <Compile Include="Controllers\InsertarEmocionImagenController.cs" />
+    <Compile Include="Controllers\InsertarEmocionVideoController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\VideoPorUsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
