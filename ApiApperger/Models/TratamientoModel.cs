@@ -8,7 +8,7 @@ namespace ApiApperger.Models
     public class TratamientoModel
     {
         public int nidImagen { get; set; }
-        public int idTratamiento { get; set; }
+        public int nidTratamiento { get; set; }
         public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }
         public bool selfie { get; set; }

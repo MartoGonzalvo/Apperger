@@ -15,7 +15,7 @@ namespace ApiApperger.Controllers
         [HttpGet]
         [ActionName("XAMARIN_Login")]
         // GET: api/Login/5  
-        public HttpResponseMessage Xamarin_login(int idEmocion, int idImagen)
+        /*public HttpResponseMessage Xamarin_login(int idEmocion, int idImagen)
         {
             
 
@@ -32,8 +32,26 @@ namespace ApiApperger.Controllers
 
                 return Request.CreateResponse(HttpStatusCode.Accepted, "Error al actualizar");
             }
-        }
+        }*/
 
+        public HttpResponseMessage Xamarin_login(int idEmocion, int idImagen, int idTratamiento)
+        {
+
+
+            var query = DB.ImagenTratamientoes.Where(x => x.nIdImagen == idImagen && x.nIdTratamiento == idTratamiento).FirstOrDefault();
+            if (query != null)
+            {
+                query.nIdEmocionElegida = idEmocion;
+                DB.SaveChanges();
+
+                return Request.CreateResponse(HttpStatusCode.Unauthorized, "Datos actualizados");
+            }
+            else
+            {
+
+                return Request.CreateResponse(HttpStatusCode.Accepted, "Error al actualizar");
+            }
+        }
 
     }
 }

@@ -23,7 +23,7 @@ namespace ApiApperger.Controllers
                                  join videoTratamiento in DB.VideoTratamientoes on tratamiento.nIdTratamiento equals videoTratamiento.nIdTratamiento
                                  join video in DB.Videos on videoTratamiento.nIdVideo equals video.nIdVideo
                                  where tratamiento.nIdPaciente == idUsuario
-                                 select new TratamientoModel { sVideo = video.sVideo, idEmocion = video.nIdEmocion.Value, nidVideo = videoTratamiento.nIdVideo.Value }).ToList();
+                                 select new TratamientoModel { sVideo = video.sVideo, idEmocion = video.nIdEmocion.Value, nidVideo = videoTratamiento.nIdVideo.Value, nidTratamiento = videoTratamiento.nIdTratamiento.Value }).ToList();
 
 
             /*foreach (var lista in listaDeImagenes)

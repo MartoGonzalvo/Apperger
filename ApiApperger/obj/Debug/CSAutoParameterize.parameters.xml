@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="appergerEntities-Web.config Connection String" description="appergerEntities Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="metadata=res://*/Models.AppergerDB.csdl|res://*/Models.AppergerDB.ssdl|res://*/Models.AppergerDB.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=apperger.database.windows.net;initial catalog=apperger;persist security info=True;user id=unlam;password=Proyecto2018;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\xamarin-projects\\Github\\AppergerWeb\\ApiApperger\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='appergerEntities']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\proyecto\\AppergerWeb\\ApiApperger\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='appergerEntities']/@connectionString" />
   </parameter>
   <parameter name="appergerEntities1-Web.config Connection String" description="appergerEntities1 Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="metadata=res://*/Models.appergerEntities.csdl|res://*/Models.appergerEntities.ssdl|res://*/Models.appergerEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=apperger1.database.windows.net;initial catalog=apperger;user id=unlam;password=Proyecto2018;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\xamarin-projects\\Github\\AppergerWeb\\ApiApperger\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='appergerEntities1']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\proyecto\\AppergerWeb\\ApiApperger\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='appergerEntities1']/@connectionString" />
   </parameter>
 </parameters>

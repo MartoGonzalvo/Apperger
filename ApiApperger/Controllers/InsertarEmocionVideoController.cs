@@ -15,11 +15,11 @@ namespace ApiApperger.Controllers
         [HttpGet]
         [ActionName("XAMARIN_InsertarEmocionVideo")]
         // GET: api/Login/5  
-        public HttpResponseMessage Xamarin_InsertarEmocionVideo(int idEmocion, int idVideo)
+        public HttpResponseMessage Xamarin_InsertarEmocionVideo(int idEmocion, int idVideo, int idTratamiento)
         {
 
 
-            var query = DB.VideoTratamientoes.Where(x => x.nIdVideo == idVideo).FirstOrDefault();
+            var query = DB.VideoTratamientoes.Where(x => x.nIdVideo == idVideo && x.nIdTratamiento == idTratamiento).FirstOrDefault();
 
             if (query != null)
             {

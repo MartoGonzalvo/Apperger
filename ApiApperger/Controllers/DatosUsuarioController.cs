@@ -24,7 +24,7 @@ namespace ApiApperger.Controllers
             TratamientoModel tratamientoUsuario = new TratamientoModel();
             foreach (var lista in query)
             {
-                tratamientoUsuario.idTratamiento = lista.nIdTratamiento;
+                tratamientoUsuario.nidTratamiento = lista.nIdTratamiento;
                 tratamientoUsuario.idUsuario = lista.nIdUsuario;
                 tratamientoUsuario.selfie = Convert.ToBoolean(lista.bSelfie);
                 tratamientoUsuario.video = Convert.ToBoolean(lista.bVideo);
