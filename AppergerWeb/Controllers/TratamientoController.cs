@@ -139,5 +139,50 @@ namespace AppergerWeb.Controllers
             }
             base.Dispose(disposing);
         }
+    
+    public ActionResult Estadisticas(int? TratamientoId)
+    {
+
+        Tratamiento tratamiento = db.Tratamiento.Include(x => x.ImagenTratamiento).
+            Include(x => x.ImagenTratamiento.Select(y => y.Imagen)).
+            Include(x => x.ImagenTratamiento.Select(y => y.Imagen)).
+            Single(x => x.nIdTratamiento == TratamientoId);
+        if (tratamiento == null)
+        {
+            return HttpNotFound();
+        }
+        int error = 0;
+        int acierto = 0;
+        foreach (var item in tratamiento.ImagenTratamiento)
+        {
+            int emocionPosta = Convert.ToInt16(item.Imagen.nIdEmocion);
+            int emocionElegida = Convert.ToInt16(item.nIdEmocionElegida);
+            if (emocionPosta == emocionElegida)
+            { acierto++; }
+            else { error++; }
+        }
+        ViewBag.acierto = acierto;
+        ViewBag.error = error;
+
+        int errorVideo = 0;
+        int aciertoVideo = 0;
+        foreach (var item in tratamiento.VideoTratamiento)
+        {
+            int emocionPosta = Convert.ToInt16(item.Video.nIdEmocion);
+            int emocionElegida = Convert.ToInt16(item.nIdEmocionElegida);
+            if (emocionPosta == emocionElegida)
+            { aciertoVideo++; }
+            else { errorVideo++; }
+        }
+        ViewBag.aciertoVideo = acierto;
+        ViewBag.errorVideo = error;
+
+
+        ViewBag.usuario = tratamiento.usuario.sNombre + ' ' + tratamiento.usuario.sApellido;
+
+
+
+        return View(tratamiento);
     }
+}
 }

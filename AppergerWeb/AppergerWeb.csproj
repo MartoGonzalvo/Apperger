@@ -369,6 +369,7 @@
     <Content Include="Scripts\custom.min.js" />
     <Content Include="Scripts\dashboard1.js" />
     <Content Include="Scripts\jquery.slimscroll.js" />
+    <Content Include="Scripts\Peity.js" />
     <Content Include="Scripts\sidebarmenu.js" />
     <Content Include="Scripts\waves.js" />
     <Content Include="scss\icons\flag-icon-css\flag-icon.min.css" />
@@ -929,6 +930,7 @@
     <Content Include="Views\VideoTratamiento\Create.cshtml" />
     <Content Include="Views\VideoTratamiento\Edit.cshtml" />
     <Content Include="Views\VideoTratamiento\Delete.cshtml" />
+    <Content Include="Views\Tratamiento\Estadisticas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiApperger\ApiApperger.csproj">

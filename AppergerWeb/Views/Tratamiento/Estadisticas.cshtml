@@ -1,0 +1,111 @@
+﻿@model AppergerWeb.Models.Tratamiento
+
+@{
+    ViewBag.Title = "Estadisticas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    .chart-container {
+        position: relative;
+        float: left;
+        width: 250px;
+        margin-left: 40px;
+    }
+
+    .container {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+</style>
+
+
+
+
+
+
+
+<h2 class="col-12 text-center"> Estadisticas de @ViewBag.usuario</h2>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-block">
+            <div class="row">
+                <div class="col-md-8">
+
+                    <div class="table-responsive">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th>Imagen </th>
+                                    <th>Emocion </th>
+                                    <th> Resultado </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.ImagenTratamiento)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.Imagen.sDescripcion)</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Imagen.Emocion.sDescripcion)
+                                        </td>
+                                        <td>
+                                            @if (item.Imagen.nIdEmocion == item.nIdEmocionElegida)
+                                            {
+                                                <span class="badge badge-success"> Acierto</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-danger"> Error</span>
+                                            }
+
+                                        </td>
+
+                                        <td></td>
+                                    </tr>
+
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+                    <div class="chart-container ">
+                        <canvas id="chartjs-4" class="chartjs" width="300" height="400"></canvas>
+                        <script>new Chart(document.getElementById("chartjs-4"), { "type": "doughnut", "data": { "labels": ["Acierto", "Error"], "datasets": [{ "label": "My First Dataset", "data": [@ViewBag.acierto, @ViewBag.error], "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"] }] } });</script>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+
+
+
+
+
+
+
