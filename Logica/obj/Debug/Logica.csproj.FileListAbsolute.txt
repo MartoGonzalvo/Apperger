@@ -64,7 +64,6 @@ C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\bin\Microsoft.CodeDom.Providers.
 C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\bin\EntityFramework.xml
 C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\bin\EntityFramework.SqlServer.xml
 C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
 C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
 C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\obj\Debug\Logica.dll
 C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\obj\Debug\Logica.pdb
@@ -100,3 +99,5 @@ C:\Users\personal\Source\Repos\AppergerWeb5\Logica\obj\Debug\Logica.csproj.CoreC
 C:\Users\personal\Source\Repos\AppergerWeb5\Logica\obj\Debug\Logica.csproj.CopyComplete
 C:\Users\personal\Source\Repos\AppergerWeb5\Logica\obj\Debug\Logica.dll
 C:\Users\personal\Source\Repos\AppergerWeb5\Logica\obj\Debug\Logica.pdb
+C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+C:\Users\HIGGE\source\repos\AppergerWeb3\Logica\obj\Debug\Logica.csproj.CopyComplete

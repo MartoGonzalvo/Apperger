@@ -589,7 +589,6 @@ C:\Users\HIGGE\source\repos\AppergerWeb3\AppergerWeb\bin\es\System.Web.WebPages.
 C:\Users\HIGGE\source\repos\AppergerWeb3\AppergerWeb\bin\es\System.Web.Http.resources.dll
 C:\Users\HIGGE\source\repos\AppergerWeb3\AppergerWeb\bin\es\System.Net.Http.Formatting.resources.dll
 C:\Users\HIGGE\source\repos\AppergerWeb3\AppergerWeb\bin\es\System.Web.Http.WebHost.resources.dll
-C:\Users\HIGGE\source\repos\AppergerWeb3\AppergerWeb\obj\Debug\AppergerWeb.csprojResolveAssemblyReference.cache
 C:\Users\HIGGE\source\repos\AppergerWeb3\AppergerWeb\obj\Debug\AppergerWeb.csproj.CoreCompileInputs.cache
 C:\Users\HIGGE\source\repos\AppergerWeb3\AppergerWeb\obj\Debug\AppergerWeb.dll
 C:\Users\HIGGE\source\repos\AppergerWeb3\AppergerWeb\obj\Debug\AppergerWeb.pdb
@@ -830,3 +829,5 @@ C:\Users\personal\Source\Repos\AppergerWeb5\AppergerWeb\obj\Debug\AppergerWeb.cs
 C:\Users\personal\Source\Repos\AppergerWeb5\AppergerWeb\obj\Debug\AppergerWeb.csproj.CopyComplete
 C:\Users\personal\Source\Repos\AppergerWeb5\AppergerWeb\obj\Debug\AppergerWeb.dll
 C:\Users\personal\Source\Repos\AppergerWeb5\AppergerWeb\obj\Debug\AppergerWeb.pdb
+C:\Users\HIGGE\source\repos\AppergerWeb3\AppergerWeb\obj\Debug\AppergerWeb.csprojAssemblyReference.cache
+C:\Users\HIGGE\source\repos\AppergerWeb3\AppergerWeb\obj\Debug\AppergerWeb.csproj.CopyComplete
