@@ -13,28 +13,28 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.sVideo)
+            @Html.DisplayName("Url")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.sVideo)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.nInicio)
+            @Html.DisplayName("Inicio")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.nInicio)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.nFin)
+            @Html.DisplayName("Fin")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.nFin)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.sDescripcion)
+            @Html.DisplayName("Descrpción")
         </dt>
 
         <dd>
@@ -42,7 +42,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Categoria.sDescripcion)
+            @Html.DisplayName("Categoria")
         </dt>
 
         <dd>
@@ -56,8 +56,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-success " /> |
+            @Html.ActionLink("Regresar", "Index")
         </div>
     }
 </div>

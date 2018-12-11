@@ -5,10 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Imagenes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+
+    @Html.ActionLink(" Agregar imagen  ", "Create", "web", new { @class = "btn btn-info btn-sm " })
 </p>
 <div class="table table-striped table-bordered table-responsive" style="width:100%">
 
@@ -16,15 +17,15 @@
         <tr>
 
             <th>
-                Emocion
+                Emoción
             </th>
             <th>
-                Descripcion
+                Descripción
             </th>
             <th>
                Imagen
             </th>
-            <th>Accion</th>
+            <th>Acción</th>
         </tr>
 
         @foreach (var item in Model)
@@ -41,9 +42,10 @@
                     <img src="@Html.DisplayFor(modelItem => item.sImagen)" height="70px" />
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.nIdImagen }) |
+             
+                    <a href="@Url.Action("Edit", "imagen", new {  id = item.nIdImagen  })"><i class="far fa-edit"></i></a>
 
-                    @Html.ActionLink("Eliminar", "Delete", new { id = item.nIdImagen })
+                    <a href="@Url.Action("Delete",  "imagen", new {  id = item.nIdImagen  })"> <i class="fas fa-trash-alt text-danger"></i></a>
                 </td>
             </tr>
         }

@@ -8,19 +8,20 @@
 <h2>Imagenes para tratamiento de @ViewBag.Usuario</h2>
 
 <p>
-    @Html.ActionLink("  Seleccionar Imagen", "Create", new {tratamientoId = ViewBag.tratamientoId },new { @class = "fas fa-plus-square"})
+    @Html.ActionLink(" Agregar Imagen ", "Create",  new { tratamientoId = ViewBag.tratamientoId }, new { @class = "btn btn-info btn-sm " })
+    @*@Html.ActionLink("  Seleccionar Imagen", "Create", new { tratamientoId = ViewBag.tratamientoId }, new { @class = "fas fa-plus-square" })*@
 </p>
-<
+
 <table class="table">
     <tr>
         <th>
-            Descripcion
+            Descripción
         </th>
         <th>Imagen</th>
         <th>
             @Html.DisplayNameFor(model => model.Tratamiento.Categoria)
         </th>
-        <th>Accion</th>
+        <th>Acción</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -36,8 +37,8 @@
         </td>
         <td>
            
+            <a href="@Url.Action("Delete",  "ImagenTratamiento", new {  id = item.nIdImagenTra, tratamientoId = item.nIdTratamiento })"> <i class="fas fa-trash-alt text-danger"></i></a>
         
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.nIdImagenTra, tratamientoId = item.nIdTratamiento })
         </td>
     </tr>
 }

@@ -106,7 +106,16 @@ namespace AppergerWeb.Controllers
 
 
         }
-
+        // POST: Delete/5
+        //[HttpPost, ActionName("Delete")]
+      //  [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
+        {
+            usuario usuario1 = DB.usuario.Find(id);
+            DB.usuario.Remove(usuario1);
+            DB.SaveChanges();
+            return RedirectToAction("Pacientes");
+        }
 
         public ActionResult CrearEditarUsuario1(usuario modelo)
         {
