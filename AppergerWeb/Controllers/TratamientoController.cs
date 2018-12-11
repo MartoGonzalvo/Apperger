@@ -46,7 +46,21 @@ namespace AppergerWeb.Controllers
             ViewBag.nIdCategoria = new SelectList(db.Categoria.ToList(), "nIdCategoria", "sDescripcion");
 
             ViewBag.nIdPaciente = new SelectList(db.usuario.Where(t => t.nPacienteDe == idPsicologo), "nIdUsuario", "sNombre");
-            //ViewBag.nIdPsicologo = new SelectList(db.usuario, "nIdUsuario", "sUsuario");
+            ViewBag.bSelfie = new List<SelectListItem>
+                  {
+                     new SelectListItem{ Text="Activo", Value = "True" },
+                     new SelectListItem{ Text="No activo", Value = "False" }
+                  };
+            ViewBag.bImagen = new List<SelectListItem>
+                  {
+                     new SelectListItem{ Text="Activo", Value = "True" },
+                     new SelectListItem{ Text="No activo", Value = "False" }
+                  };
+            ViewBag.bVideo = new List<SelectListItem>
+                  {
+                     new SelectListItem{ Text="Activo", Value = "True" },
+                     new SelectListItem{ Text="No activo", Value = "False" }
+                  };
             return View();
         }
 
@@ -67,6 +81,21 @@ namespace AppergerWeb.Controllers
 
             ViewBag.nIdPaciente = new SelectList(db.usuario, "nIdUsuario", "sUsuario", tratamiento.nIdPaciente);
             ViewBag.nIdPsicologo = new SelectList(db.usuario, "nIdUsuario", "sUsuario", tratamiento.nIdPsicologo);
+            ViewBag.bSelfie = new List<SelectListItem>
+                  {
+                     new SelectListItem{ Text="Activo", Value = "True" },
+                     new SelectListItem{ Text="No activo", Value = "False" }
+                  };
+            ViewBag.bImagen = new List<SelectListItem>
+                  {
+                     new SelectListItem{ Text="Activo", Value = "True" },
+                     new SelectListItem{ Text="No activo", Value = "False" }
+                  };
+            ViewBag.bVideo = new List<SelectListItem>
+                  {
+                     new SelectListItem{ Text="Activo", Value = "True" },
+                     new SelectListItem{ Text="No activo", Value = "False" }
+                  };
             return View(tratamiento);
         }
 

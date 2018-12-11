@@ -138,10 +138,16 @@ namespace AppergerWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            var imgT = db.ImagenTratamiento.Where(x => x.nIdImagen== id).FirstOrDefault();
             Imagen imagen = db.Imagen.Find(id);
-            db.Imagen.Remove(imagen);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (imgT == null)
+            {
+                db.Imagen.Remove(imagen);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.ErrorImagen ="No se puede eliminar una imagen que se encuentra asociada a un tratamiento";
+            return View("Delete",imagen);
         }
 
         protected override void Dispose(bool disposing)
