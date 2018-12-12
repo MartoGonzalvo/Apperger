@@ -174,8 +174,10 @@ namespace AppergerWeb.Controllers
 
         Tratamiento tratamiento = db.Tratamiento.Include(x => x.ImagenTratamiento).
             Include(x => x.ImagenTratamiento.Select(y => y.Imagen)).
-            Include(x => x.ImagenTratamiento.Select(y => y.Imagen)).
-            Single(x => x.nIdTratamiento == TratamientoId);
+            Include(x => x.VideoTratamiento.Select(y => y.Video)).
+             Include(x => x.Selfie.Select(y=> y.Emocion)).
+             Include(x => x.Selfie.Select(y => y.Emocion1)).
+            Single(z => z.nIdTratamiento == TratamientoId);
         if (tratamiento == null)
         {
             return HttpNotFound();
@@ -203,14 +205,23 @@ namespace AppergerWeb.Controllers
             { aciertoVideo++; }
             else { errorVideo++; }
         }
-        ViewBag.aciertoVideo = acierto;
-        ViewBag.errorVideo = error;
+        ViewBag.aciertoVideo = aciertoVideo;
+        ViewBag.errorVideo = errorVideo;
 
+            int errorSelfie= 0;
+            int aciertoSelfie = 0;
+            foreach (var item in tratamiento.Selfie)
+            {
+                int emocionPosta = Convert.ToInt16(item.nIdEmocionElegida);
+                int emocionElegida = Convert.ToInt16(item.nIdEmocionRealizada);
+                if (emocionPosta == emocionElegida)
+                { aciertoSelfie++; }
+                else { errorSelfie++; }
+            }
+            ViewBag.aciertoSelfie = aciertoSelfie;
+            ViewBag.aciertoSelfie = errorSelfie;
 
-        ViewBag.usuario = tratamiento.usuario.sNombre + ' ' + tratamiento.usuario.sApellido;
-
-
-
+            ViewBag.usuario = tratamiento.usuario.sNombre + ' ' + tratamiento.usuario.sApellido;
         return View(tratamiento);
     }
 }

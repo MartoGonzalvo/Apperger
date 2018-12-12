@@ -233,6 +233,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\appergerheader.png" />
     <Content Include="assets\images\background\profile-bg.jpg" />
     <Content Include="assets\images\big\img1.jpg" />
     <Content Include="assets\images\big\img2.jpg" />
@@ -245,6 +246,7 @@
     <Content Include="assets\images\logo header-01.png" />
     <Content Include="assets\images\logo-light-icon.png" />
     <Content Include="assets\images\logo-light-text.png" />
+    <Content Include="assets\images\psicologue.png" />
     <Content Include="assets\images\users\1.jpg" />
     <Content Include="assets\images\users\2.jpg" />
     <Content Include="assets\images\users\3.jpg" />

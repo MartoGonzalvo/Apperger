@@ -37,6 +37,7 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-block">
+            <h3 class="text-blue">Estadisticas de Reconocimiento de emociones en imagenes</h3>
             <div class="row">
                 <div class="col-md-8">
 
@@ -94,8 +95,128 @@
     </div>
 </div>
 
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-block">
+            <h3 class="text-blue">Estadisticas de Reconocimiento de situaciones</h3>
+            <div class="row">
+                <div class="col-md-8">
+
+                    <div class="table-responsive">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th>Video </th>
+                                    <th>Emocion </th>
+                                    <th> Resultado </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.VideoTratamiento)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.Video.sDescripcion)</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Video.Emocion.sDescripcion)
+                                        </td>
+                                        <td>
+                                            @if (item.Video.nIdEmocion == item.nIdEmocionElegida)
+                                            {
+                                                <span class="badge badge-success"> Acierto</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-danger"> Error</span>
+                                            }
+
+                                        </td>
+
+                                        <td></td>
+                                    </tr>
+
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+                    <div class="chart-container ">
+                        <canvas id="chartjs-5" class="chartjs" width="300" height="400"></canvas>
+                        <script>new Chart(document.getElementById("chartjs-5"), { "type": "doughnut", "data": { "labels": ["Acierto", "Error"], "datasets": [{ "label": "My First Dataset", "data": [@ViewBag.aciertoVideo, @ViewBag.errorVideo], "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"] }] } });</script>
+
+                    </div>
 
 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-block">
+            <h3 class="text-blue">Estadisticas de Imitacion de emociones</h3>
+            <div class="row">
+
+                <div class="col-md-8">
+
+                    <div class="table-responsive">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th>Emocion propuesta </th>
+                                    <th>Emocion Imitada</th>
+                                    <th> Resultado </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Selfie)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(modelItem => item.Emocion.sDescripcion)</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Emocion1.sDescripcion)
+                                        </td>
+                                        <td>
+                                            @if (item.nIdEmocionElegida == item.nIdEmocionRealizada)
+                                            {
+                                                <span class="badge badge-success"> Acierto</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-danger"> Error</span>
+                                            }
+
+                                        </td>
+
+                                        <td></td>
+                                    </tr>
+
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+                    <div class="chart-container ">
+                        <canvas id="chartjs-6" class="chartjs" width="300" height="400"></canvas>
+                        <script>new Chart(document.getElementById("chartjs-6"), { "type": "doughnut", "data": { "labels": ["Acierto", "Error"], "datasets": [{ "label": "My First Dataset", "data": [@ViewBag.aciertoSelfie, @ViewBag.aciertoSelfie], "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"] }] } });</script>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
