@@ -106,7 +106,16 @@ namespace AppergerWeb.Controllers
 
 
         }
-
+        // POST: Delete/5
+        //[HttpPost, ActionName("Delete")]
+      //  [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
+        {
+            usuario usuario1 = DB.usuario.Find(id);
+            DB.usuario.Remove(usuario1);
+            DB.SaveChanges();
+            return RedirectToAction("Pacientes");
+        }
 
         public ActionResult CrearEditarUsuario1(usuario modelo)
         {
@@ -116,7 +125,7 @@ namespace AppergerWeb.Controllers
                 {
                     modelo.nPacienteDe = Convert.ToInt16(Session["usuario"]);
                     modelo.nRol = 3;
-                    modelo.sContraseña = "a123";
+                    
 
                     DB.usuario.Add(modelo);
                     // modelo.nPacienteDe=user
@@ -134,8 +143,9 @@ namespace AppergerWeb.Controllers
             }
             else
             {
-               
 
+                modelo.nPacienteDe = Convert.ToInt16(Session["usuario"]);
+                modelo.nRol = 3;
                 var usuario = DB.usuario.Single(x => x.nIdUsuario == modelo.nIdUsuario);
                 DB.Entry(usuario).CurrentValues.SetValues(modelo);
             //    DB.usuario.Add(modelo);

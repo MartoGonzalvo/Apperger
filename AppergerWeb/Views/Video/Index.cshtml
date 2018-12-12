@@ -5,25 +5,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Videos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+   
+    @Html.ActionLink(" Agregar Video  ", "Create", "web",  new { @class = "btn btn-info btn-sm " })
 </p>
 <table class="table">
     <tr>
 
         <th>
-            @Html.DisplayNameFor(model => model.sDescripcion)
+            @Html.DisplayName("Descripción")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Categoria.sDescripcion)
+            @Html.DisplayName("Categoria")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.sVideo)
+            @Html.DisplayName("Url")
         </th>
         
-        <th></th>
+        <th> @Html.DisplayName("Acciones")</th>
     </tr>
 
     @foreach (var item in Model)
@@ -37,14 +38,17 @@
             @Html.DisplayFor(modelItem => item.Categoria.sDescripcion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.sVideo)
+            <a href=@Html.DisplayFor(modelItem => item.sVideo) target="_blank">@Html.DisplayFor(modelItem => item.sVideo)</a>
         </td>
       
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.nIdVideo }) |
-            @Html.ActionLink("Details", "Details", new { id = item.nIdVideo }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.nIdVideo })
-     
+    
+        
+            <a href="@Url.Action("Edit", "video", new {  id = item.nIdVideo  })"><i class="far fa-edit"></i></a>
+
+            <a href="@Url.Action("Delete",  "video", new {  id = item.nIdVideo  })"> <i class="fas fa-trash-alt text-danger"></i></a>
+
+        
 
 
         </td>

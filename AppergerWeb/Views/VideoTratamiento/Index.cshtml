@@ -8,19 +8,20 @@
 <h2>Video para tratamiento de @ViewBag.Usuario</h2>
 
 <p>
-    @Html.ActionLink("  Seleccionar Video", "Create", new { tratamientoId = ViewBag.tratamientoId }, new { @class = "fas fa-plus-square" })
+    @Html.ActionLink(" Agregar Video ", "Create", new { tratamientoId = ViewBag.tratamientoId }, new { @class = "btn btn-info btn-sm " })
+    @*@Html.ActionLink("  Seleccionar Video", "Create", new { tratamientoId = ViewBag.tratamientoId }, new { @class = "fas fa-plus-square" })*@
 </p>
-<
+
 <table class="table">
     <tr>
         <th>
-            Descripcion
+            Descripción
         </th>
         <th>Url</th>
         <th>
             @Html.DisplayNameFor(model => model.Tratamiento.Categoria)
         </th>
-        <th>Accion</th>
+        <th>Acción</th>
     </tr>
 
     @foreach (var item in Model)
@@ -30,15 +31,16 @@
                 @Html.DisplayFor(modelItem => item.Video.sDescripcion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Video.sVideo)
+                <a href=@Html.DisplayFor(modelItem => item.Video.sVideo) target="_blank">@Html.DisplayFor(modelItem => item.Video.sVideo)</a>
+                
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Video.Categoria.sDescripcion)
             </td>
             <td>
 
-
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.nIdVideoTra, tratamientoId = item.nIdTratamiento })
+                <a href="@Url.Action("Delete",  "VideoTratamiento", new {  id = item.nIdVideoTra, tratamientoId = item.nIdTratamiento })"> <i class="fas fa-trash-alt text-danger"></i></a>
+                
             </td>
         </tr>
     }

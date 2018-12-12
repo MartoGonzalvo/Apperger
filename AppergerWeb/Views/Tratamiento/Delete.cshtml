@@ -5,15 +5,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+
+<h3>Esta seguro de eliminar el tratamiento?</h3>
 <div>
-    <h4>Tratamiento</h4>
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.dFechaInicio)
+            @Html.DisplayName("Paciente")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario.sUsuario)
+        </dd>
+        <dt>
+            @Html.DisplayName("Fecha de Inicio")
         </dt>
 
         <dd>
@@ -21,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dFechaFin)
+            @Html.DisplayName("Fecha de Fin")
         </dt>
 
         <dd>
@@ -29,7 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.bSelfie)
+            @Html.DisplayName("Actividad Selfie")
         </dt>
 
         <dd>
@@ -37,7 +44,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.bImagen)
+            @Html.DisplayName("Actividad Imagen")
         </dt>
 
         <dd>
@@ -45,37 +52,26 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.bVideo)
+            @Html.DisplayName("Actividad Video")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.bVideo)
+            
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.usuario.sUsuario)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.usuario.sUsuario)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.usuario1.sUsuario)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.usuario1.sUsuario)
-        </dd>
 
     </dl>
-
+   
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
-
+   
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-success" /> |
+            @Html.ActionLink("Regresar", "Index")
         </div>
     }
 </div>

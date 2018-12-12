@@ -18,7 +18,7 @@
         @Html.HiddenFor(model => model.nIdTratamiento)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.dFechaInicio, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.dFechaInicio,"Fecha de inicio", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.dFechaInicio, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.dFechaInicio, "", new { @class = "text-danger" })
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.dFechaFin, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.dFechaFin,"Fecha de Fin", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.dFechaFin, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.dFechaFin, "", new { @class = "text-danger" })
@@ -34,7 +34,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.bSelfie, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.bSelfie, "Selfie",htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.bSelfie)
@@ -44,7 +44,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.bImagen, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.bImagen,"Imagen", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.bImagen)
@@ -54,7 +54,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.bVideo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.bVideo,"Video", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.bVideo)
@@ -64,7 +64,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.nIdPsicologo, "nIdPsicologo", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.nIdPsicologo, "Id Psicólogo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("nIdPsicologo", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.nIdPsicologo, "", new { @class = "text-danger" })
@@ -72,7 +72,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.nIdPaciente, "nIdPaciente", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.nIdPaciente, "Id Paciente", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("nIdPaciente", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.nIdPaciente, "", new { @class = "text-danger" })
@@ -81,12 +81,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Regresar", "Index")
 </div>

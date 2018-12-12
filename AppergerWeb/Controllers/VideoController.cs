@@ -59,7 +59,7 @@ namespace AppergerWeb.Controllers
                 if (ModelState.IsValid)
                 {
                 //?start=235&end=240
-                var link = video.sVideo+ "?start="+video.nInicio+ "&end="+video.nFin;
+                var link = "https://www.youtube.com/embed/" + video.sVideo+ "?start="+video.nInicio+ "&end="+video.nFin;
                 video.sVideo = link;
                     db.Video.Add(video);
                     db.SaveChanges();
@@ -128,10 +128,20 @@ namespace AppergerWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            var videoT = db.VideoTratamiento.Where(x => x.nIdVideo == id).FirstOrDefault();
             Video video = db.Video.Find(id);
-            db.Video.Remove(video);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (videoT == null)
+            {
+                
+                db.Video.Remove(video);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.ErrorVideo = "No se puede eliminar un video que se encuentra asociado a un tratamiento";
+            return View("Delete", video);
+
+
+          
         }
 
         protected override void Dispose(bool disposing)
