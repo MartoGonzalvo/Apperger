@@ -1,5 +1,9 @@
 ﻿@{
-    if (Session["sessionLogin"] == null) { Response.Redirect("Web/login"); }
+
+    if (!Response.IsRequestBeingRedirected)
+    {
+        if (Session["sessionLogin"] == null) { Response.Redirect("Web/login"); }
+    }
     ViewBag.Title = "Apperger";
 }
 <!DOCTYPE html>
@@ -155,7 +159,7 @@
             <!-- End Sidebar scroll-->
             <!-- Bottom points-->
             <div class="sidebar-footer">
-                   <!-- item--><a href="../Web/Logout" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+                   <!-- item--><a href="../Web/Logout" class="link" style="width:100%" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i>   Cerrar sesión</a>
 
 
             </div>
@@ -193,7 +197,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer"> © 2018 Apperger powered by Beer&Flowers.com  </footer>
+            <footer class="footer"> © 2018 Apperger  </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->

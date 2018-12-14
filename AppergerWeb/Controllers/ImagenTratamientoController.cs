@@ -60,7 +60,7 @@ namespace AppergerWeb.Controllers
                 imagenTratamiento.nIdTratamiento = tratamientoId;
                 db.ImagenTratamiento.Add(imagenTratamiento);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { tratamientoId = tratamientoId });
             }
 
             ViewBag.nIdImagen = new SelectList(db.Imagen, "nIdImagen", "sImagen", imagenTratamiento.nIdImagen);
@@ -96,7 +96,7 @@ namespace AppergerWeb.Controllers
             {
                 db.Entry(imagenTratamiento).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { tratamientoId = imagenTratamiento.nIdTratamiento });
             }
             ViewBag.nIdImagen = new SelectList(db.Imagen, "nIdImagen", "sImagen", imagenTratamiento.nIdImagen);
             ViewBag.nIdTratamiento = new SelectList(db.Tratamiento, "nIdTratamiento", "nIdTratamiento", imagenTratamiento.nIdTratamiento);

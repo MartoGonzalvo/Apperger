@@ -1,6 +1,11 @@
 ﻿@model AppergerWeb.Models.Categoria
 
 @{
+    if (!Response.IsRequestBeingRedirected)
+    {
+        if (Session["sessionLogin"] == null) { Response.Redirect("../Web/login"); }
+    }
+
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
