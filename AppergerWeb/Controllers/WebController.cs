@@ -53,7 +53,7 @@ namespace AppergerWeb.Controllers
                 Session["usuario"] = user.nIdUsuario;
                 Session["NombreUsuario"] = user.sNombre + ' ' + user.sApellido;
                 System.Web.HttpContext.Current.Session["sessionLogin"] = ViewBag.id;
-                return View("../Home/Index");
+                return RedirectToAction("Pacientes");
 
             }
 
