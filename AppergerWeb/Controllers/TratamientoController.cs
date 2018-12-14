@@ -219,7 +219,7 @@ namespace AppergerWeb.Controllers
                 else { errorSelfie++; }
             }
             ViewBag.aciertoSelfie = aciertoSelfie;
-            ViewBag.aciertoSelfie = errorSelfie;
+            ViewBag.errorSelfie = errorSelfie;
 
             ViewBag.usuario = tratamiento.usuario.sNombre + ' ' + tratamiento.usuario.sApellido;
         return View(tratamiento);
